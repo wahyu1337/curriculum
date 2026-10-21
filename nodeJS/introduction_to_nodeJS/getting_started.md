@@ -28,31 +28,20 @@ Recently the NodeJS.dev team removed a large amount of content from their websit
 
 </div>
 
-- Let's dive in and start looking at Node server-side code! We will be hopping around lessons in the [NodeJS.org](https://nodejs.org/en/learn) docs which you should follow along.
-  - Learn [how to run Node.js scripts from the terminal](https://nodejs.org/en/learn/command-line/run-nodejs-scripts-from-the-command-line).
-  - HTTP Module
-    - Learn [how to make HTTP requests with Node](https://github.com/nodejs/nodejs.dev/blob/aa4239e87a5adc992fdb709c20aebb5f6da77f86/content/learn/node-js-web-server/node-make-http-requests.en.md).
-    - Check out the docs for [Node's http module](https://nodejs.org/api/http.html). In particular, check out `http.createServer`. The documentation shows optional parameters it can accept which you may or may not use. For now, you just need to know that the `createServer` method creates an HTTP server that accepts handlers that will be executed every time we get a request.
-  - File System
-    - First, take a look at the [fs module](https://github.com/nodejs/nodejs.dev/blob/aa4239e87a5adc992fdb709c20aebb5f6da77f86/content/learn/node-js-modules/node-module-fs.en.md) that we use heavily for working with files in Node.
-    - Then, let’s start [writing files with Node](https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs).
-    - Finally, we’ll learn how to [read files with Node](https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs).
-  - The URL Class
-    - Check out this [documentation on the URL class](https://nodejs.org/api/url.html#url_the_whatwg_url_api). Play with the code samples to see how it works!
-  - Events
-    - Follow along the [Event Emitter](https://nodejs.org/en/learn/asynchronous-work/the-nodejs-event-emitter) section.
-    - Look into the [Node events module](https://github.com/nodejs/nodejs.dev/blob/aa4239e87a5adc992fdb709c20aebb5f6da77f86/content/learn/node-js-modules/node-module-events.en.md).
+Let's dive in and start looking at Node server-side code! We will be hopping around lessons in the [NodeJS.org](https://nodejs.org/en/learn) docs which you should follow along.
+
+1. Learn [how to run Node.js scripts from the terminal](https://nodejs.org/en/learn/command-line/run-nodejs-scripts-from-the-command-line).
+1. HTTP Module
+   - Learn [how to make HTTP requests with Node](https://nodejs.org/learn/getting-started/fetch).
+   - Check out the docs for [Node's http module](https://nodejs.org/api/http.html). In particular, check out `http.createServer`. The documentation shows optional parameters it can accept which you may or may not use. For now, you just need to know that the `createServer` method creates an HTTP server that accepts handlers that will be executed every time we get a request.
+1. File System
+   - First, take a look at the [fs module](https://github.com/nodejs/nodejs.dev/blob/aa4239e87a5adc992fdb709c20aebb5f6da77f86/content/learn/node-js-modules/node-module-fs.en.md) that we use heavily for working with files in Node.
+   - Then, let’s start [writing files with Node](https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs).
+   - Finally, we’ll learn how to [read files with Node](https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs).
+1. The URL Class
+   - Check out this [documentation on the URL class](https://nodejs.org/api/url.html#url_the_whatwg_url_api). Play with the code samples to see how it works!
+1. Events
+   - Follow along the [Event Emitter](https://nodejs.org/en/learn/asynchronous-work/the-nodejs-event-emitter) section.
+   - Look into the [Node events module](https://github.com/nodejs/nodejs.dev/blob/aa4239e87a5adc992fdb709c20aebb5f6da77f86/content/learn/node-js-modules/node-module-events.en.md).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is a File System Module? How and why would you use it?](https://github.com/nodejs/nodejs.dev/blob/aa4239e87a5adc992fdb709c20aebb5f6da77f86/content/learn/node-js-modules/node-module-fs.en.md)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- This [Node crash course playlist of 12 episodes](https://www.youtube.com/watch?v=zb3Qk8SG5Ms&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU) from Net Ninja is a great resource to learn Node.js. There are 12 videos in this playlist, you can consider them all.

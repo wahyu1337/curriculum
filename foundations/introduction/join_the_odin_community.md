@@ -1,14 +1,14 @@
 ### Introduction
 
-Working and collaborating with other people is an important part of working as a web developer. Therefore, we at The Odin Project encourage you to participate in our online chat community, which we'll talk more about below. By joining the community, you can grow alongside other Odinites and help each other learn web development. While you're at it, you can check out [our Facebook page](https://www.facebook.com/theodinproject/), [follow us on X](https://x.com/TheOdinProject) and catch up on [our Instagram page](https://www.instagram.com/theodinproject/). Use #TheOdinProject to share your Odin Project progress, updates, thoughts and to see what other Odin students are up to!
+Working and collaborating with other people is an important part of working as a web developer. Therefore, we at The Odin Project encourage you to participate in our online chat community, which we'll talk more about below. By joining the community, you can grow alongside other Odinites and help each other learn web development. While you're at it, you can check out [our Facebook page](https://www.facebook.com/theodinproject/) and [follow us on X](https://x.com/TheOdinProject). Use #TheOdinProject to share your Odin Project progress, updates, thoughts and to see what other Odin students are up to!
 
 ### Lesson overview
 
 This section contains a general overview of topics that you will learn in this lesson.
 
-- Learn about The Odin's community and how to join it.
-- Explain how to ask good and detailed questions.
-- Explain good practices for helping others with their questions.
+- The Odin Project's community and how to join it.
+- How to ask good and detailed questions.
+- Good practices for helping others with their questions.
 
 ### Why a community is awesome for you
 
@@ -28,7 +28,7 @@ As most of the projects are designed to push you to your limit, please remember 
 
 If you're feeling stuck, it's a good time to pause and take a breather. Break the problem down into little pieces and then decide what is really holding you back. We call this technique [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging).
 
-You should also use Google to find relevant information for your problem. Read about [how to use Google to solve your programming questions](https://web.archive.org/web/20250918082145/https://old.codinginflow.com/google-programming-questions). You can also look back at previous lessons for tools that you can apply to the current task.
+You should also use a search engine to find relevant information for your problem. Read about [how to use a search engine to solve your programming questions](https://web.archive.org/web/20250918082145/https://old.codinginflow.com/google-programming-questions). You can also look back at previous lessons for tools that you can apply to the current task.
 
 If these methods don't yield a solution for you, then it's time to reach out to the Odin community and ask for help.
 
@@ -46,7 +46,7 @@ When asking your question, please remember to include the context:
 - How did you get there?
 - What have you tried so far?
 
-If you can't pinpoint the problem, you can share a **screenshot**. This is especially useful for showing the output of commands in the command line. In Discord, drag and drop your screenshot image file into the chat box to upload it, or use the PrtScn and paste keyboard shortcuts. If you don’t know how to take a screenshot on your computer, this is a good time to ask Google.
+If you can't pinpoint the problem, you can share a **screenshot**. This is especially useful for showing the output of commands in the command line. In Discord, drag and drop your screenshot image file into the chat box to upload it, or use the PrtScn and paste keyboard shortcuts. If you don’t know how to take a screenshot on your computer, this is a good time to use your favorite search engine.
 
 Screenshots are great for showing the output of commands or error messages in the command line. Screenshots are also great for showing the output from your code such as how the output looks visually on a webpage or console outputs in the browser. However, you should always include the corresponding files containing the error. Even if it is a short amount of code, providing it in the discord server in the proper format along with a screenshot of the output is helpful to those debugging it rather than just a screenshot. When you do share a screenshot of the output or how it looks visually make sure to push your project to GitHub or share your corresponding code using an appropriate online REPL (such as [CodePen](https://codepen.io)) so that others can comb through and debug the code. The screenshot of the output and the correlating code that can recreate the problem will help make it easier to understand the problem for people helping you. You'll learn all about GitHub very soon.
 
@@ -123,11 +123,11 @@ If the question seems confusing or ambiguous, ask for more clarity, or politely 
 
 If the question needs to have live code to fully understand or debug, ask them to use an appropriate online REPL (such as [CodePen](https://codepen.io)) to provide it. If the problem is difficult to isolate, they should recreate the problem with isolated code.
 
-#### 8. Do not answer Googleable questions
+#### 8. Do not answer searchable questions
 
 Learning how to research these questions is a very important skill for developers, so we need to empower them to find their own answer. When we answer these questions, it hinders their personal growth and makes them codependent on our community.
 
-Instead of answering these questions, politely ask them to Google their question or use our bot command `/search google` with the search terms.
+Instead of answering these questions, politely ask them to use a search engine for their question first, or use our bot command `/search google` with the search terms.
 
 #### 9. Do not answer questions covered in our curriculum
 
@@ -189,17 +189,3 @@ Sometimes there are misunderstandings and interactions go poorly. You are a volu
    - **Take some time to observe the server before jumping in:** This helps you understand how our community interacts and communicates.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How do you join The Odin Project's Discord server?](https://discord.gg/fbFCkYabZB)
-- [What makes a good question that's easier for others to help with?](#asking-for-help)
-- [How can you more effectively help others with their coding problems?](#how-to-help-others-solve-coding-problems)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- For more information on formatting, check out [Discord Markdown 101](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline-).

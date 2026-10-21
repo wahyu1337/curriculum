@@ -58,6 +58,14 @@ We don't always have to sanitize data right when we get it - sometimes it makes 
 
 We'll be using a library called `express-validator` to help us out with both of these. While it makes these processes much simpler, it's important to understand the underlying concepts of these two operations.
 
+<div class="lesson-note" markdown="1">
+
+#### Sanitization definition
+
+You will sometimes see "sanitization" used in a much stricter sense, involving only the removal of characters from incoming data, distinguishing it from "encoding" which is replacing certain characters. It is sometimes also used more loosely to refer to the entire process of changing the incoming data in some way, which includes both removing and encoding characters. This is how we will use the term in our own content in this lesson.
+
+</div>
+
 #### Installing express-validator
 
 We start as usual by installing the correct package in the *root* folder of our project.
@@ -259,7 +267,7 @@ Next we'll create two views:
 <body>
   <h1><%= title %></h1>
   <ul>
-    <% if (locals.users) {%>
+    <% if (locals.users) { %>
       <% users.forEach(user => { %>
         <li>
           ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
@@ -495,14 +503,16 @@ Finally, let's add a way to delete users as well by starting with another form i
 ```ejs
 <!-- In views/index.ejs -->
 <ul>
-  <% if (locals.users) {%>
+  <% if (locals.users) { %>
     <% users.forEach(function(user) { %>
-      <li>ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %></li>
-      <a href="/<%= user.id %>/update">Update</a>
-      <!-- This time we're sending a POST request to our route, so we need a form. -->
-      <form action="/<%= user.id %>/delete" method="POST" style="display:inline;">
-        <button type="submit" onclick="return confirm('Are you sure you want to delete this user?');">Delete</button>
-      </form>
+      <li>
+        ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
+        <a href="/<%= user.id %>/update">Update</a>
+        <!-- This time we're sending a POST request to our route, so we need a form. -->
+        <form action="/<%= user.id %>/delete" method="POST" style="display:inline;">
+          <button type="submit" onclick="return confirm('Are you sure you want to delete this user?');">Delete</button>
+        </form>
+      </li>
     <% }); %>
   <% } %>
 </ul>
@@ -511,7 +521,6 @@ Finally, let's add a way to delete users as well by starting with another form i
 Then we add the logic to handle the request into our controller:
 
 ```javascript
-// Tell the server to delete a matching user, if any. Otherwise, respond with an error.
 exports.usersDeletePost = (req, res) => {
   usersStorage.deleteUser(req.params.id);
   res.redirect("/");
@@ -564,17 +573,6 @@ What if we want to search for a specific user in a list of thousands? We'll need
   - [Validation Chains](https://express-validator.github.io/docs/guides/validation-chain)
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are the attributes of a form element and what do they do?](#html-forms-overview)
-- [How do you install and import express-validator in your project?](#validation-and-sanitization)
-- [How do you validate and sanitize form input using express-validator?](#understanding-the-body-function)
-- [What is the difference between validation and sanitization?](#validation-and-sanitization)
-- [How do you handle validation errors in Express routes?](#validation-results)
-- [What is the importance of escaping HTML characters in a form?](#escaping-user-input)
 
 ### Additional resources
 

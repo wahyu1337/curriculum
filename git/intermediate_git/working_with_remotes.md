@@ -38,7 +38,7 @@ git push origin main
 git log
 ```
 
-We look at our commit message and realize *oops*, we made a mistake. We want to undo this commit and are once again tempted to just force the push. But wait, remember, this is a **very dangerous command**. If we're ever considering using it, always check if it's appropriate and if we can use a safer command instead. If we're collaborating with others and want to *undo* a commit we just made, we can instead use `git revert`!
+We look at our commit message and realize *oops*, we made a mistake. We would be tempted to undo this commit with `git reset` and just force the push. But wait! Remember, force pushing is a **very dangerous command**. If we're ever considering using it, always check if it's appropriate and if we can use a safer command instead. If we're collaborating with others and want to *undo* a commit we just made, we can instead use `git revert` which would not require forcing a push! For more information, especially about a collaborative context, watch ["Git Revert vs Git Reset"](https://www.youtube.com/watch?v=iIaM7j3tMuk).
 
 ```bash
 git revert HEAD
@@ -49,13 +49,11 @@ Remember when we were working with HEAD, aka the current commit we're viewing, w
 
 So now that we've learned about the various dangers of `git push --force`, you're probably wondering why it exists and when to use it. A very common scenario in which developers use `git push --force` is updating pull requests. Collaborative work is covered more in depth in a separate lesson, but the take-away from this section should be that the `--force` option should be used only when you are certain that it is appropriate. There are also less common scenarios, such as when sensitive information is accidentally uploaded to a repository and you want to remove all occurrences of it.
 
-<span id='force-with-lease'>It is worth giving special mention to `git push --force-with-lease`</span>, a command which in some companies is the default option. The reason for this is that it's a fail-safe! It checks if the branch you're attempting to push to has been updated and sends you an error if it has. This gives you an opportunity to, as mentioned before, `fetch` the work and update your local repository.
+It is worth giving special mention to `git push --force-with-lease`, a command which in some companies is the default option. The reason for this is that it's a fail-safe! It checks if the branch you're attempting to push to has been updated and sends you an error if it has. This gives you an opportunity to, as mentioned before, `fetch` the work and update your local repository.
 
 ### Dangers and best practices
 
-Let's review the dangers we've addressed so far. I know, I know, it's scary stuff - but we have to be mindful or our coworkers might end up hating our guts! If you look back through this lesson you'll see a common thread. `commit --amend`, `rebase`, `reset`, `push --force` are all especially dangerous when you're collaborating with others. <span id='dangers'>These commands can destroy work your coworkers have created</span>. So keep that in mind. When attempting to rewrite history, always check the dangers of the particular command you're using and follow these best practices for the commands we've covered:
-
-<span id='best-practices'></span>
+Let's review the dangers we've addressed so far. I know, I know, it's scary stuff - but we have to be mindful or our coworkers might end up hating our guts! If you look back through this lesson you'll see a common thread. `commit --amend`, `rebase`, `reset`, `push --force` are all especially dangerous when you're collaborating with others. These commands can destroy work your coworkers have created. So keep that in mind. When attempting to rewrite history, always check the dangers of the particular command you're using and follow these best practices for the commands we've covered:
 
 1. If working on a team project, make sure rewriting history is safe to do and others know you're doing it.
 1. Ideally, stick to using these commands only on branches that you're working with by yourself.
@@ -78,17 +76,3 @@ Let's review the dangers we've addressed so far. I know, I know, it's scary stuf
     - Take your time with this resource as well, it's very well written and will be very helpful in solidifying your understanding of Git. Make sure to read all the sections.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is a safe way to forcefully push history changes to a remote repository?](#force-with-lease)
-- [What are the dangers of history-changing operations?](#dangers)
-- [What are best practices of history-changing operations?](#best-practices)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- To understand how `revert` fits into a collaborative workflow and why it’s preferred over `reset` for shared repositories, watch this - [Git Revert and why](https://www.youtube.com/watch?v=iIaM7j3tMuk).

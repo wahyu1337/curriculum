@@ -1,14 +1,11 @@
 const sectionsWithDefaultContent = {
   lessonOverview: "lesson overview",
   assignment: "assignment",
-  knowledgeCheck: "knowledge check",
   additionalResources: "additional resources",
 };
 const listSectionsDefaultContent = {
   [sectionsWithDefaultContent.lessonOverview]:
     "This section contains a general overview of topics that you will learn in this lesson.",
-  [sectionsWithDefaultContent.knowledgeCheck]:
-    "The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.",
   [sectionsWithDefaultContent.additionalResources]:
     "This section contains helpful links to related content. It isn't required, so consider it supplemental.",
 };
@@ -26,14 +23,14 @@ function getListSectionErrors(sectionTokens, section) {
   const listSectionErrors = [];
   const listItemsName = `${section}${section.endsWith("s") ? "" : "s"}`;
   const tokensAfterHeading = sectionTokens.slice(
-    sectionTokens.findIndex((token) => token.type === "heading_close") + 1
+    sectionTokens.findIndex((token) => token.type === "heading_close") + 1,
   );
 
   const listItemTokens = tokensAfterHeading.filter(
-    (token) => token.type === "list_item_open"
+    (token) => token.type === "list_item_open",
   );
   const nestedListItemTokens = listItemTokens.filter(
-    (token) => token.level > 1
+    (token) => token.level > 1,
   );
   nestedListItemTokens.forEach((nestedListItemToken) => {
     listSectionErrors.push(
@@ -41,8 +38,8 @@ function getListSectionErrors(sectionTokens, section) {
       // will resolve the issue. There may be entire list items that need to be removed as well.
       createErrorObject(
         nestedListItemToken.lineNumber,
-        `The ${section} section must not contain nested lists.`
-      )
+        `The ${section} section must not contain nested lists.`,
+      ),
     );
   });
 
@@ -50,7 +47,7 @@ function getListSectionErrors(sectionTokens, section) {
   // the fact that whitespaces won't precede the token marker, e.g. "1.", in the token object
   const orderedListItemRegex = /^\d+\.\s*/;
   const orderedListItemTokens = listItemTokens.filter((token) =>
-    orderedListItemRegex.test(token.line)
+    orderedListItemRegex.test(token.line),
   );
   orderedListItemTokens.forEach((orderedListItemToken) => {
     listSectionErrors.push(
@@ -62,13 +59,13 @@ function getListSectionErrors(sectionTokens, section) {
           deleteCount:
             orderedListItemToken.line.match(orderedListItemRegex)[0].length,
           insertText: "- ",
-        }
-      )
+        },
+      ),
     );
   });
 
   const defaultContentOpenTokenIndex = tokensAfterHeading.findIndex(
-    (token) => token.line === listSectionsDefaultContent[section]
+    (token) => token.line === listSectionsDefaultContent[section],
   );
 
   if (defaultContentOpenTokenIndex > 0) {
@@ -77,15 +74,15 @@ function getListSectionErrors(sectionTokens, section) {
     listSectionErrors.push(
       createErrorObject(
         defaultContentToken.lineNumber,
-        `Expected default section content to come immediately after the ${section} heading.`
-      )
+        `Expected default section content to come immediately after the ${section} heading.`,
+      ),
     );
   }
   if (defaultContentOpenTokenIndex === -1) {
     const sectionStartsWithList = tokensAfterHeading[0].line.startsWith("- ");
     const errorDetail = sectionStartsWithList
       ? `Expect default content to precede unordered list of ${listItemsName}: "${listSectionsDefaultContent[section]}"`
-      : `Expected: "${listSectionsDefaultContent[section]}"; Actual: "${tokensAfterHeading[0].line}",`;
+      : `Expected: "${listSectionsDefaultContent[section]}"; Actual: "${tokensAfterHeading[0].line}"`;
     let replacementText = listSectionsDefaultContent[section];
 
     if (sectionStartsWithList) {
@@ -97,46 +94,28 @@ function getListSectionErrors(sectionTokens, section) {
         lineNumber: tokensAfterHeading[0].lineNumber,
         deleteCount: tokensAfterHeading[0].line.length,
         insertText: replacementText,
-      })
+      }),
     );
   }
 
   const tokensAfterFirstContent = tokensAfterHeading.slice(
     tokensAfterHeading.findIndex(
       (token, _index, arr) =>
-        token.type === arr[0].type.replace("_open", "_close")
-    ) + 1
+        token.type === arr[0].type.replace("_open", "_close"),
+    ) + 1,
   );
   const bulletListOpenTokenIndex = sectionTokens.findIndex(
-    (token) => token.type === "bullet_list_open"
+    (token) => token.type === "bullet_list_open",
   );
   if (
     (defaultContentOpenTokenIndex === 0 && !tokensAfterFirstContent.length) ||
     bulletListOpenTokenIndex === -1
   ) {
-    const isAdditionalResources =
-      section === sectionsWithDefaultContent.additionalResources;
     const tokenLineNumber = (
       tokensAfterFirstContent[0] || tokensAfterHeading[0]
     ).lineNumber;
-    const errorDetail = isAdditionalResources
-      ? `Expected section to include unordered list item: "It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum."`
-      : `Must include an unordered list of ${listItemsName} in the "${section}" section`;
-    listSectionErrors.push(
-      createErrorObject(
-        tokenLineNumber,
-        errorDetail,
-        isAdditionalResources
-          ? {
-              lineNumber: !tokensAfterFirstContent.length
-                ? tokenLineNumber + 1
-                : tokenLineNumber,
-              insertText:
-                "\n- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.",
-            }
-          : {}
-      )
-    );
+    const errorDetail = `Must include an unordered list of ${listItemsName} in the "${section}" section`;
+    listSectionErrors.push(createErrorObject(tokenLineNumber, errorDetail));
   }
 
   if (
@@ -151,13 +130,13 @@ function getListSectionErrors(sectionTokens, section) {
         {
           lineNumber: tokensAfterFirstContent[0].lineNumber,
           deleteCount: WHOLE_LINE,
-        }
-      )
+        },
+      ),
     );
   }
 
   const lastBulletListCloseIndex = sectionTokens.findLastIndex(
-    (token) => token.type === "bullet_list_close"
+    (token) => token.type === "bullet_list_close",
   );
 
   if (
@@ -165,7 +144,7 @@ function getListSectionErrors(sectionTokens, section) {
     lastBulletListCloseIndex !== sectionTokens.length - 1
   ) {
     const tokensAfterBulletListClose = sectionTokens.slice(
-      lastBulletListCloseIndex + 1
+      lastBulletListCloseIndex + 1,
     );
 
     listSectionErrors.push(
@@ -175,8 +154,8 @@ function getListSectionErrors(sectionTokens, section) {
         {
           lineNumber: tokensAfterBulletListClose[0].lineNumber,
           deleteCount: WHOLE_LINE,
-        }
-      )
+        },
+      ),
     );
   }
 
@@ -186,19 +165,19 @@ function getListSectionErrors(sectionTokens, section) {
 function getAssignmentSectionErrors(sectionTokens) {
   const assignmentErrors = [];
   const divBlockTokens = sectionTokens.filter(
-    (token) => token.type === "html_block" && token.content.startsWith("<div")
+    (token) => token.type === "html_block" && token.content.startsWith("<div"),
   );
   const hasAssignmentDiv = divBlockTokens.some(
     (token) =>
       token.content.includes(`class="lesson-content__panel"`) &&
-      token.content.includes(`markdown="1"`)
+      token.content.includes(`markdown="1"`),
   );
   if (!divBlockTokens || !hasAssignmentDiv) {
     assignmentErrors.push(
       createErrorObject(
         sectionTokens[0].lineNumber,
-        `Assignment sections must include an HTML div element with class="lesson-content__panel" and markdown="1" attributes`
-      )
+        `Assignment sections must include an HTML div element with class="lesson-content__panel" and markdown="1" attributes`,
+      ),
     );
   }
 
@@ -211,7 +190,7 @@ module.exports = {
   tags: ["content"],
   parser: "markdownit",
   information: new URL(
-    "https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP003.md"
+    "https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP003.md",
   ),
   function: function TOP003(params, onError) {
     const { tokens } = params.parsers.markdownit;
@@ -233,7 +212,7 @@ module.exports = {
 
         const tokensBetweenHeadings = tokens.slice(
           tokenIndexValue,
-          tokenIndicesArr[arrIndex + 1]
+          tokenIndicesArr[arrIndex + 1],
         );
         const isSectionEmpty =
           tokensBetweenHeadings.at(-1).type === "heading_close";
@@ -243,25 +222,24 @@ module.exports = {
             createErrorObject(
               tokensBetweenHeadings[0].lineNumber,
               `The ${headingContent} section cannot be empty`,
-            )
+            ),
           );
         } else {
           switch (headingContent) {
             case sectionsWithDefaultContent.lessonOverview:
-            case sectionsWithDefaultContent.knowledgeCheck:
             case sectionsWithDefaultContent.additionalResources:
               totalErrors.push(
-                ...getListSectionErrors(tokensBetweenHeadings, headingContent)
+                ...getListSectionErrors(tokensBetweenHeadings, headingContent),
               );
               break;
             case sectionsWithDefaultContent.assignment:
               totalErrors.push(
-                ...getAssignmentSectionErrors(tokensBetweenHeadings)
+                ...getAssignmentSectionErrors(tokensBetweenHeadings),
               );
               break;
           }
         }
-      }
+      },
     );
 
     totalErrors.forEach((error) => {

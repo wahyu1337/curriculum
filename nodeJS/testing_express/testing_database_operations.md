@@ -25,38 +25,54 @@ We'll leverage environment variables for your codebase to identify which databas
 
 ```properties
 NODE_ENV=development
-DATABASE_URL=postgresql://<user>:<password>@localhost:3306/inventory_application
-TEST_DATABASE_URL=postgresql://<user>:<password>@localhost:3306/test_inventory_application
+DATABASE_URL=postgresql://<user>:<password>@localhost:5432/inventory_application
+TEST_DATABASE_URL=postgresql://<user>:<password>@localhost:5432/test_inventory_application
 ```
 
-Next, setup appropriate npm scripts in your `package.json` file:
+Next, set up appropriate npm scripts in your `package.json` file:
 
 ```json
 {
   // other stuff
   "scripts": {
-    "dev": "NODE_ENV=development node app.js",
-    "test": "NODE_ENV=test jest"
+    "dev": "node app.js",
+    "test": "jest"
   },
   // even more stuff
 }
 ```
 
+To load your environment variables, you can use your preferred method for `app.js` but you will not be able to use `--env-file` or `--env-file-if-exists` with Jest, since you don't directly invoke `node`. In this case, you will have to use something like `process.loadEnvFile()` to programmatically load your environment variables into the test environment. You can do this in a [Jest global setup file](https://jestjs.io/docs/configuration#globalsetup-string), for example. Furthermore, [Jest sets `NODE_ENV` to `'test'` by default](https://jestjs.io/docs/environment-variables#node_env) which will override your `.env` file's `NODE_ENV=development`, so no need to do anything fancy there.
+
 Based on the `NODE_ENV`, you can programmatically switch out database urls:
 
 ```javascript
-const databaseUrl = process.env.NODE_ENV === 'test'
+const connectionString = process.env.NODE_ENV === 'test'
   ? process.env.TEST_DATABASE_URL
   : process.env.DATABASE_URL;
 
-const prisma = new PrismaClient({
-  datasources: {
-    db: {
-      url: databaseUrl,
-    },
-  },
+const adapter = new PrismaPg({ connectionString });
+const prisma = new PrismaClient({ adapter });
+```
+
+### Resetting the database between tests
+
+When testing database operations, we must always isolate our tests from each other so that no test depends on any other test. For example, we would not want a test to fail if we didn't add or delete a table row in a different test, even if the main behavior being tested actually does work. This means that when we interact with our database in a test (read, create, update, or delete records), we should ideally clean up by resetting the database to its initial state before the next test.
+
+This can be conveniently handled in something like a `beforeEach`. For example, if we have a database with users and projects, we could have something like:
+
+```javascript
+beforeEach(async () => {
+  await prisma.$transaction([
+    prisma.user.deleteMany(),
+    prisma.project.deleteMany(),
+  ]);
 });
 ```
+
+This ensures that the users and projects tables are reset before running any other test.
+
+In addition, if you're splitting your tests into separate files, you need to set up your test runner to run them sequentially (one file after another) instead of in parallel. This prevents different test database operations from getting mixed up. Because Jest defaults to parallel file execution, you can add the [`--runInBand` flag](https://jestjs.io/docs/cli#--runinband) to your `test` script in `package.json` to ensure sequential execution.
 
 Voila, the setup is complete. Now shoo... go get testin'.
 
@@ -67,16 +83,3 @@ Voila, the setup is complete. Now shoo... go get testin'.
 1. No need for a deep dive, but take a look at [pg's GitHub repo's tests directory](https://github.com/brianc/node-postgres/tree/master/packages/pg/test) to see how well tested most of the popular libraries are.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [When should you unit test database operations?](#unit-tests-do-you-even-need-to)
-- [How do you set up and use a test database for integration testing?](#integration-tests)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

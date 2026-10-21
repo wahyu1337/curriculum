@@ -6,9 +6,52 @@ In the previous lesson, you learned how to write the HTML that determines how a 
 
 This section contains a general overview of topics that you will learn in this lesson.
 
-- Add styles to HTML with CSS.
-- Understand how to use the class and ID attributes.
-- Add styles to specific elements using the correct selectors.
+- Adding styles to HTML with CSS.
+- How to use the `class` and `id` attributes.
+- How different CSS selectors work.
+
+### Adding CSS to HTML
+
+Before learning how to write CSS rules, let's first link a CSS file to our `index.html` so you'll be able to experiment with every example throughout this lesson.
+
+There are three ways to add CSS to HTML:
+
+- External CSS
+- Internal CSS
+- Inline CSS
+
+We'll focus on external CSS for now because it's the method you'll use most often. The two remaining methods will be covered later in this lesson.
+
+#### External CSS
+
+External CSS is the most common method you will come across, and it involves creating a separate file for CSS and linking it inside the HTML.
+
+```html
+<!-- index.html -->
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+```
+
+First, we add a void `<link>` element inside of the opening and closing `<head>` tags of the HTML file. The `href` attribute is the location of the CSS file, in our case a path to it that's relative to the location of the HTML file (but could also be something like a URL to a stylesheet hosted somewhere else). In our example above, we are assuming both files are located in the same directory. The `rel` attribute is required, and it specifies the relationship between the HTML file and the linked file.
+
+Then, we create an empty `styles.css` file in the same directory as your `index.html` file. We'll start adding CSS rules to this file in the next section.
+
+<div class="lesson-note" markdown="1">
+
+#### CSS file names
+
+`styles.css` is just what we went with as the file name here. You could name the file whatever you want, as long as the file type is `.css`; "style" or "styles" is just what's most commonly used.
+
+</div>
+
+A couple of the pros to this method are:
+
+1. It keeps our HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
+1. We only need to edit the CSS in *one* place, which is especially handy for websites with many pages that all share similar styles.
+
+To help us with learning how to write CSS rules, let's first create an `index.html` file (with the usual boilerplate) as well as a `styles.css` file in the same directory, then link both files together as described above.
 
 ### Basic syntax
 
@@ -27,6 +70,8 @@ A `<div>` is one of the basic HTML elements. It is an empty container. In genera
 ### Selectors
 
 Selectors refer to the HTML elements to which CSS rules apply; they're what is actually being "selected" for each rule. The following subsections don't cover every selector available, but they're by far the most common and the ones you should get comfortable using first.
+
+As you go through each example, play around with them to see the results by adding both the HTML and CSS to their respective files.
 
 #### Universal selector
 
@@ -205,7 +250,7 @@ In general, you can't chain more than one type selector since an element can’t
 
 #### Descendant combinator
 
-Combinators allow us to combine multiple selectors differently than either grouping or chaining them, as they show a relationship between the selectors. There are four types of combinators in total, but for right now we're going to only show you the **descendant combinator**, which is represented in CSS by a single space between selectors. <span id="descendant-combinator-description">A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc.) that matches the previous selector.</span>
+Combinators allow us to combine multiple selectors differently than either grouping or chaining them, as they show a relationship between the selectors. There are four types of combinators in total, but for right now we're going to only show you the **descendant combinator**, which is represented in CSS by a single space between selectors. A descendant combinator will only cause elements that match the last selector to be selected if they also have an ancestor (parent, grandparent, etc.) that matches the previous selector.
 
 So something like `.ancestor .child` would select an element with the class `child` if it has an ancestor with the class `ancestor`. Another way to think of it is that `child` will only be selected if it is nested inside `ancestor`, regardless of how deep that nesting is. Take a quick look at the example below and see if you can tell which elements would be selected based on the CSS rule provided:
 
@@ -235,7 +280,7 @@ There's really no limit to how many combinators you can add to a rule, so `.one 
 
 ### Properties to get started with
 
-There are some CSS properties that you're going to be using all the time, or at the very least more often than not. We're going to introduce you to several of these properties, though this is by no means a complete list. Learning the following properties will be enough to help get you started.
+There are some CSS properties that you’re going to be using all the time, or at the very least more often than not. We’re going to introduce you to several of these properties, though this is by no means a complete list. Learning the following properties will be enough to help get you started. Note that all properties will have a default initial value, which will be used if neither you nor the browser has set a different value (MDN docs for each CSS property will detail these).
 
 #### Color and background-color
 
@@ -278,7 +323,7 @@ If a browser cannot find or does not support the first font in a list, it will u
 
 Images aren't the only elements that we can adjust the height and width on, but we want to focus on them specifically in this case.
 
-By default, an `<img>` element's `height` and `width` values will be the same as the actual image file's height and width. If you wanted to adjust the size of the image without causing it to lose its proportions, you would use a value of "auto" for the `height` property and adjust the `width` value:
+By default, an `<img>` element's `height` and `width` values will be the same as the actual image file's height and width. If you wanted to adjust the size of the image without causing it to lose its proportions, you would set either the `height` or `width` property to a specific value and set the other property to `auto`. For example:
 
 ```css
 img {
@@ -291,45 +336,9 @@ For example, if an image's original size was 500px height and 1000px width, usin
 
 These properties work in conjunction with the height and width attributes in the HTML. It’s best to include both of these properties and the HTML attributes for image elements, even if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, it won’t take up any space on the page at first but will suddenly cause a drastic shift of the other page contents once it does load in. Explicitly stating a `height` and `width` prevents this from happening, as space will be “reserved” on the page and appear blank until the image loads.
 
-### Adding CSS to HTML
+### Additional methods for adding CSS to HTML
 
-Now that we've learned some basic syntax, you might be wondering *how* to add all this CSS to our HTML. There are three methods to do so.
-
-#### External CSS
-
-External CSS is the most common method you will come across, and it involves creating a separate file for the CSS and linking it inside of an HTML's opening and closing `<head>` tags with a void `<link>` element:
-
-```html
-<!-- index.html -->
-
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-```
-
-```css
-/* styles.css */
-
-div {
-  color: white;
-  background-color: black;
-}
-
-p {
-  color: red;
-}
-```
-
-First, we add a void `<link>` element inside of the opening and closing `<head>` tags of the HTML file. The `href` attribute is the location of the CSS file, either an absolute URL or, what you'll be utilizing, a URL relative to the location of the HTML file. In our example above, we are assuming both files are located in the same directory. The `rel` attribute is required, and it specifies the relationship between the HTML file and the linked file.
-
-Then inside of the newly created `styles.css` file, we have the selector (the `div` and `p`), followed by a pair of opening and closing curly braces, which create a "declaration block". Finally, we place any declarations inside of the declaration block. `color: white;` is one declaration, with `color` being the property and `white` being the value, and `background-color: black;` is another declaration.
-
-A note on file names: `styles.css` is just what we went with as the file name here. You can name the file whatever you want as long as the file type is `.css`, though "style" or "styles" is most commonly used.
-
-A couple of the pros to this method are:
-
-1. It keeps our HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
-1. We only need to edit the CSS in *one* place, which is especially handy for websites with many pages that all share similar styles.
+Now that we've learned some basic syntax, there are two additional methods to add CSS to HTML (on top of the external method we learned earlier in this lesson).
 
 #### Internal CSS
 
@@ -367,7 +376,7 @@ Inline CSS makes it possible to add styles directly to HTML elements, though thi
 </body>
 ```
 
-The first thing to note is that we don't actually use any selectors here, since the styles are being added directly to the opening `<div>` tag itself. Next, we have the `style=` attribute, with its value within the pair of quotation marks being the declarations.
+The first thing to note is that we don't actually use any selectors here, since the styles are being added directly to the opening `<div>` tag itself. Next, we have the `style` attribute, with its value within the pair of quotation marks being the declarations.
 
 If you need to add a *unique* style for a *single* element, this method can work just fine. Generally, though, this isn't exactly a recommended way for adding CSS to HTML for a few reasons:
 
@@ -391,21 +400,3 @@ If you need to add a *unique* style for a *single* element, this method can work
     Note: Solutions for these exercises can be found in the `solution` folder of each exercise.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the syntax for class and ID selectors?](#class-selectors)
-- [How would you apply a single rule to two different selectors?](#the-grouping-selector)
-- [Given an element that has an id of `title` and a class of `primary`, how would you use both attributes for a single rule?](#chaining-selectors)
-- [What does the descendant combinator do?](#descendant-combinator-description)
-- [What are the names of the three ways to add CSS to HTML?](#adding-css-to-html)
-- [What are the main differences between the three ways of adding CSS to HTML?](#external-css)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [Mozilla CSS values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units) can be used to learn the various types of values possible in absolute or relative terms.
-- [An interactive Scrim](https://scrimba.com/scrim/co12d4cf99cf2776f19e84a9d) which covers much of the material in the lesson in an interactive form.

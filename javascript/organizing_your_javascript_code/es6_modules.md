@@ -89,7 +89,7 @@ Firstly, we'll just show you the different import/export syntaxes but the code w
 
 Let's use our `one.js` and `two.js` examples from before. First, we'll need to export our greeting and farewell strings from `one.js`.
 
-To export something as a **named export**, we can either stick the `export` keyword in front of its declaration, or add an `export { }` somewhere in the file (typically the end), where the curly braces contain a list of the names of the things to export. Either method is fine to use, and we can export as many things as we liked as named exports.
+To export something as a **named export**, we can either stick the `export` keyword in front of its declaration, or add an `export { }` somewhere in the file (typically the end), where the curly braces contain a list of the names of the things to export. Either method is fine to use, and we can export as many things as we like as named exports.
 
 ```javascript
 // one.js
@@ -231,21 +231,3 @@ CJS is still used quite a lot in Node.js code, though in recent years, ESM in No
 1. As per usual, you can learn most about JavaScript keywords and concepts from the MDN docs, so check out the [docs on export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) and [docs on import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import). There are little extras about them we have not covered in this lesson, such as aliases and namespace imports.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [Before ES6 modules, how would you privatize a variable from being accessible in other files?](#before-es6-modules-the-global-scope-problem)
-- [Before ES6 modules, how would you expose variables to be accessible in later files?](#before-es6-modules-the-global-scope-problem)
-- [What are some benefits of writing code in modules?](#introduction)
-- [What is the difference between default and named exports?](#default-exports)
-- [What is an entry point?](#entry-points)
-- [How do you link a module script in HTML?](#entry-points)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- This video on [ES6 Modules by Web Dev Simplified](https://youtu.be/cRHQNNcYf6s) summarizes much of the ESM topics discussed in this lesson. At the end, he mentions `nomodule` and support for older browsers that were unable to support ESM. Nowadays, this is not a concern as ESM is supported by basically every browser in common use.
-- Here is a [brief comparison of CommonJS modules and ES6 modules](https://blog.logrocket.com/commonjs-vs-es-modules-node-js/).

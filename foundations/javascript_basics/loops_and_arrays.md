@@ -159,24 +159,18 @@ You've learnt about three powerful array methods which are `map`, `filter` and `
 
 For a quick recap of these array methods, consider this picture which should visually explain them in terms of sandwiches:
 
-![example of filter, map and reduce methods being used to visually represent making a sandwich](https://static.observableusercontent.com/thumbnail/bea194824f0d5842addcb7910bb488795c6f80f143ab5332b28a317ebcecd603.jpg)
+![example of filter, map and reduce methods being used to visually represent making a sandwich](https://cdn.statically.io/gh/TheOdinProject/curriculum/335ab97a10d66d0f07e81d01fc6b1c63d31dc5ae/foundations/javascript_basics/loops_and_arrays/imgs/00.jpg)
 
-Let's do some quick practice before your assignment! Rewrite the `sumOfTripledEvens(array)` function using these three methods. Once you are finished and you've tested that your function works correctly, check out the solution below.
-
-<details markdown="block">
-
-<summary>Solution</summary>
+Before proceeding to the next section, have a look at how we can rewrite the `sumOfTripledEvens(array)` function using these three methods:
 
 ```javascript
 function sumOfTripledEvens(array) {
   return array
-    .filter((num) => num % 2 === 0)
-    .map((num) => num * 3)
-    .reduce((acc, curr) => acc + curr);
+    .filter((num) => num % 2 === 0) // filter the array to only contain even numbers
+    .map((num) => num * 3) // multiply each number in the array by 3
+    .reduce((acc, curr) => acc + curr); // calculate the sum of all numbers in the array
 }
 ```
-
-</details>
 
 ### Test-driven development
 
@@ -198,33 +192,14 @@ We will teach you the art of actually writing these tests later in the course. F
    - `Copy and sort array`
    - `Shuffle an array`
    - `Filter unique array members`
-1. Go back to the [JavaScript exercises repository](https://github.com/TheOdinProject/javascript-exercises) that we introduced in the [Data Types and Conditionals](https://www.theodinproject.com/lessons/foundations-data-types-and-conditionals) assignment. Review each README file prior to completing the following exercises in order:
-    - `06_repeatString`
-    - `07_reverseString`
-    - `08_removeFromArray`
-    - `09_sumAll`
-    - `10_leapYears`
-    - `11_tempConversion`
+1. Go to the [JavaScript exercises repository's `foundations/loops_and_arrays` directory](https://github.com/TheOdinProject/javascript-exercises/tree/main/foundations/loops_and_arrays). Review each README file prior to completing the following exercises in order (it may have been a while, so take a moment to remind yourself of the [repo's own README](https://github.com/TheOdinProject/javascript-exercises#how-to-use-these-exercises "JavaScript exercises repo README") for general instructions):
+    - `01_repeatString`
+    - `02_reverseString`
+    - `03_removeFromArray`
+    - `04_sumAll`
+    - `05_leapYears`
+    - `06_tempConversion`
 
    Note: Solutions for these exercises can be found in the `solution` folder of each exercise.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are loops useful for?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#why_bother)
-- [What is the break statement?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#exiting_loops_with_break)
-- [What is the continue statement?](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#skipping_iterations_with_continue)
-- [What is an array?](https://www.w3schools.com/js/js_arrays.asp)
-- [What are arrays useful for?](https://www.w3schools.com/js/js_arrays.asp)
-- [How do you access or change an array element?](https://javascript.info/array)
-- [What are some useful array methods?](https://javascript.info/array-methods)
-- [What is the advantage of writing automated tests?](#test-driven-development)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

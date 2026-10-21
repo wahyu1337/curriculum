@@ -151,22 +151,7 @@ Using the `prefers-color-scheme` media query can be pretty helpful for users sin
 
 1. This [video on CSS custom properties](https://www.youtube.com/watch?v=PHO6TBq_auI) is a great introduction. Go ahead and watch it.
 1. Read through MDN's [Using CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties#inheritance_of_custom_properties) page starting at the "Inheritance of custom properties" section.
-1. Read the CSS Tricks article for a [comprehensive overview of custom properties and what you can do with them](https://css-tricks.com/a-complete-guide-to-custom-properties/).
+1. Watch [Using CSS custom properties](https://www.youtube.com/watch?v=_2LwjfYc1x8) by Kevin Powell, which shows neat ways to use custom properties.
 1. Open the inspector on this page to inspect the styles and see how Odin uses some custom properties.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How would you declare a custom property with a name of `text-color`?](#using-custom-properties)
-- [How would you access a custom property with a name of `background-color`?](#using-custom-properties)
-- [Where would you declare a custom property to have its scope be global and accessible by all other selectors?](#scope)
-- [Where would you declare a custom property so that a user's theme setting from their OS or browser was taken into account?](#creating-themes-with-custom-properties)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [Using CSS custom properties](https://www.youtube.com/watch?v=_2LwjfYc1x8) by Kevin Powell is a great video showing neat ways to use custom properties.

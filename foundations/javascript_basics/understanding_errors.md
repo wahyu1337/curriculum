@@ -142,19 +142,3 @@ While you should address these warnings if possible and as soon as possible, war
 1. Work through ["What went wrong? Troubleshooting JavaScript"](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong). Be sure to download their starter code that has intentional errors.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are three reasons why you may see a TypeError?](#type-error)
-- [What is the key difference between an error and a warning?](#errors-vs-warnings)
-- [What is one method you can use to resolve an error?](#tips-for-resolving-errors)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [MDN JavaScript Errors Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors).
-- Read the W3schools article to find additional [window console object methods](https://www.w3schools.com/jsref/obj_console.asp).
-- Additionally, watch Steve Griffith's brief [video explanation on the Chrome devtools Console](https://www.youtube.com/watch?v=TqPrpglfE9c).

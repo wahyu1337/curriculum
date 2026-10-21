@@ -33,7 +33,7 @@ Ultimately, frameworks can help you get up and running quickly - but they can co
 
 Preprocessors (aka precompilers) are languages that help you write CSS more easily. They can reduce code repetition and provide all sorts of time-saving and code-saving features, for example by allowing you to write loops and conditionals, and join multiple stylesheets.
 
-CSS preprocessors are essentially extensions to vanilla CSS that provide some extra functionality. When you run the processor, it takes your code and turns it into vanilla CSS that you can import into your project.
+CSS preprocessors are essentially extensions to vanilla CSS that provide some extra functionality. When you run the preprocessor, it takes your code and turns it into vanilla CSS that you can import into your project.
 
 Preprocessors do have some unique and helpful tools, but many of their most helpful features have been implemented in vanilla CSS, so it might not be worth the overhead of learning one unless you think you really need these features. For example, you have already learned about custom properties which used to be something only possible with preprocessors. [CSS nesting](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting) also used to be a common advantage of some preprocessors but has now made its way into vanilla CSS and has recently started getting more browser support.
 
@@ -48,18 +48,3 @@ Some of the standard preprocessors in use are [SASS](https://sass-lang.com/), [L
 1. Read about [some disadvantages to using a CSS preprocessor](https://adamsilver.io/blog/the-disadvantages-of-css-preprocessors/). Note that since the article was written, CSS now has nesting and variables via custom properties.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are CSS frameworks?](#frameworks-overview)
-- [What are CSS preprocessors?](#preprocessors-overview)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [Bootstrap documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-- [Tailwind documentation](https://tailwindcss.com/docs)
-- [SASS documentation](https://sass-lang.com/documentation)

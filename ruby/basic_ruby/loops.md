@@ -151,22 +151,3 @@ If you need to step through a series of numbers (or even letters) within a speci
 1. Try re-writing the above examples using alternative loop methods to achieve the same results.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is a loop and why is it useful?](#introduction)
-- [What is a `loop` loop, and how would you use it?](#loop)
-- [What is a `while` loop, and how would you use it?](#while-loop)
-- [What is a `for` loop, and how would you use it?](#for-loop)
-- [What is a `#times` loop, and how would you use it?](#times-loop)
-- [What is an `until` loop, and how would you use it?](#until-loop)
-- [What are the `#upto` and `#downto` loops, and how would you use them?](#upto-and-downto-loops)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- If you'd like another overview of loops, read this [Ruby Explained: Iteration](https://www.eriktrautman.com/posts/ruby-explained-iteration) article. (Don't worry about the `#each` method described here; we'll get to that in an upcoming lesson!)
-- If you want yet another take, read [Skork's article on loops](https://skorks.com/2009/09/a-wealth-of-ruby-loops-and-iterators/). (Again, don't worry about the `#each` and `#each_with_index` methods here; they're coming up soon.)

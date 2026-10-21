@@ -14,8 +14,8 @@ If that doesn't get you interested, remember that this curriculum is meant to pr
 
 This section contains a general overview of topics that you will learn in this lesson.
 
-- What is an algorithm?
-- What is pseudo-code?
+- Learn about algorithms.
+- Find out what pseudo-code is.
 
 ### Assignment
 
@@ -25,17 +25,9 @@ This section contains a general overview of topics that you will learn in this l
   1. Watch [What is an Algorithm?](https://youtu.be/e_WfC8HwVB8) on YouTube for a more structured look at solving problems using algorithms.
   1. Read this Quora answer about [the importance of algorithms in web development](https://qr.ae/py3NAc) to get some context for why we're going over this stuff.
   1. Watch [What is pseudocode?](https://www.youtube.com/watch?v=Rg-fO7rDsds)
-  1. Watch the first section (from 0:00 - 7:01) of [Telusko's video on data structures and algorithms](https://www.youtube.com/watch?v=xWLxhF3b5P8) for a quick overview of DSA, and why companies may be interested in hiring candidates familiar with DSA.
+  1. Watch [Telusko's video on data structures and algorithms](https://youtu.be/iZmDcfTtcNg?si=7t1q8GxYJjkYH9d4) for a quick overview of DSA, and why companies may be interested in hiring candidates familiar with DSA.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is an Algorithm?](https://youtu.be/e_WfC8HwVB8)
-- [What is the importance of algorithms in web development?](https://qr.ae/py3NAc)
-- [What is pseudocode?](https://www.youtube.com/watch?v=Rg-fO7rDsds)
 
 ### Additional resources
 

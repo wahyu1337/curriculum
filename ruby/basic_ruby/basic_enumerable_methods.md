@@ -89,7 +89,7 @@ Let's break down this syntax:
 - `{ |friend| puts "Hello, " + friend }` is a **block**, and the code inside this block is run for each element in your array. Because we have 5 friends in our array, this block will be run 5 times, once with each of the 5 elements.
 - Within the block, you'll notice that we have `|friend|`, which is known as a **block variable**. This is the element from your array that the block is currently iterating over. You can use any variable name that you find helpful here; in this example, we could have used `|x|`, but `|friend|` is more descriptive of what each element is. In the first iteration, the value of `|friend|` will be `'Sharon'`; in the second iteration, its value will be `'Leo'`; in the third, `'Leila'`; and so on until it reaches the end of the array.
 
-<span id="ruby-knowledge-check-do..end-vs-{...}">What if the block you want to pass to a method requires more logic than can fit on one line? It starts to become less readable and looks unwieldy. For multi-line blocks, the commonly accepted best practice is to change up the syntax to use `do...end` instead of `{...}`:</span>
+What if the block you want to pass to a method requires more logic than can fit on one line? It starts to become less readable and looks unwieldy. For multi-line blocks, the commonly accepted best practice is to change up the syntax to use `do...end` instead of `{...}`:
 
 ```ruby
 my_array = [1, 2]
@@ -434,26 +434,7 @@ invited_friends(friends)
   1. Read through the Ruby Explained article on [Map, Select, and Other Enumerable Methods](https://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods).
   1. Follow along with this [How to Use The Ruby Map Method](https://www.rubyguides.com/2018/10/ruby-map-method/) tutorial from Ruby Guides.
   1. Follow along with this [Reducing Enumerable](https://medium.com/@baweaver/reducing-enumerable-part-one-the-journey-begins-ddc1d4108490) article by Brandon Weaver.
+  1. Read about how `do...end` vs. `{...}` can affect precedence at [do..end vs curly braces for blocks in Ruby](https://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby).
   1. Complete the basic enumerable exercises from the [ruby-exercises repo](https://github.com/TheOdinProject/ruby-exercises) that you previously cloned.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What does the `#each` method do? What does it return?](#the-each-method)
-- [What does the `#each_with_index` method do?](#the-eachwithindex-method)
-- [What does the `#map` method do?](#the-map-method)
-- [What does the `#select` method do?](#the-select-method)
-- [What does the `#reduce` method do?](#the-reduce-method)
-- [When should you use `do...end` around a code block versus `{...}`?](#ruby-knowledge-check-do..end-vs-{...})
-- [Why should you avoid using the bang methods of enumerables?](#bang-methods)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- The Bastards Book of Ruby has a good section on [Enumerables](http://ruby.bastardsbook.com/chapters/enumerables/).
-- This tutorial on codementor is another good discussion of [the versatility of enumerable methods](https://www.codementor.io/ruby-on-rails/tutorial/rubys-swiss-army-knife-the-enumerable-module).
-- There are many more enumerable methods than are covered in this lesson (e.g., `#reject`, `#drop`, `#uniq`). For a full listing, you can check out the [Ruby Docs](https://docs.ruby-lang.org/en/3.4/Enumerable.html).

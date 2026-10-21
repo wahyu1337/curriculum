@@ -80,7 +80,7 @@ app.listen(3000, (error) => {
 
 Most of this should look familiar to you by now, except for the newly required modules `express-session` and `passport`. We are not actually going to be using `express-session` directly, it is a dependency that is used in the background by `passport.js`. You can [take a look at what the express-session package does in the Express docs](https://github.com/expressjs/session).
 
-Our view engine is set up to just look in the project directory, and it's looking for a template called `index.ejs` so go ahead and create that:
+Our view engine is looking for `index.ejs` inside the `views`, so go ahead and create that:
 
 ```html
 <!DOCTYPE html>
@@ -149,7 +149,7 @@ Let's reiterate: this is not a particularly safe way to create users in your dat
 
 Now that we have the ability to put users in our database, let's allow them to log in to see a special message on our home page! We're going to step through the process one piece at a time, but first, take a minute to glance at the [passport.js website](http://www.passportjs.org/). The documentation here has pretty much everything you need to set it up. You're going to want to refer back to this when you're working on your project.
 
-<span id='strategy'>Passport.js uses what they call *Strategies* to authenticate users</span>. They have over 500 of these strategies, but we're going to focus on the most basic (and most common), the username-and-password, or what they call the `LocalStrategy` ([documentation for the LocalStrategy](http://www.passportjs.org/docs/username-password/)). We have already installed and required the appropriate modules so let's set it up!
+Passport.js uses what they call *Strategies* to authenticate users. They have over 500 of these strategies, but we're going to focus on the most basic (and most common), the username-and-password, or what they call the `LocalStrategy` ([documentation for the LocalStrategy](http://www.passportjs.org/docs/username-password/)). We have already installed and required the appropriate modules so let's set it up!
 
 We need to add 3 functions to our app.js file, and then add an `app.post` for our `/log-in` path.
 
@@ -180,7 +180,7 @@ This function is what will be called when we use the `passport.authenticate()` f
 
 ### Functions two and three: sessions and serialization
 
-<span id='cookie'>To make sure our user is logged in, and to allow them to *stay* logged in as they move around our app, passport internally calls a function from `express-session` that uses some data to create a cookie called `connect.sid` which is stored in the user's browser</span>. These next two functions define what bit of information passport is looking for when it creates and then decodes the cookie. The reason they require us to define these functions is so that we can make sure that whatever bit of data it’s looking for actually exists in our Database! `passport.serializeUser` takes a callback which contains the information we wish to store in the session data. `passport.deserializeUser` is called when retrieving a session, where it will extract the data we "serialized" in it then ultimately attach something to the `.user` property of the request object (`req.user`) for use in the rest of the request.
+To make sure our user is logged in, and to allow them to *stay* logged in as they move around our app, passport internally calls a function from `express-session` that uses some data to create a cookie called `connect.sid` which is stored in the user's browser. These next two functions define what bit of information passport is looking for when it creates and then decodes the cookie. The reason they require us to define these functions is so that we can make sure that whatever bit of data it’s looking for actually exists in our Database! `passport.serializeUser` takes a callback which contains the information we wish to store in the session data. `passport.deserializeUser` is called when retrieving a session, where it will extract the data we "serialized" in it then ultimately attach something to the `.user` property of the request object (`req.user`) for use in the rest of the request.
 
 For our purposes, the functions that are listed in the passport docs will work just fine:
 
@@ -227,12 +227,15 @@ app.post(
   "/log-in",
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/"
+    failureRedirect: "/",
+    failureMessage: true,
   })
 );
 ```
 
-As you can see, all we have to do is call `passport.authenticate()`. This middleware performs numerous functions behind the scenes. Among other things, it looks at the request body for parameters named `username` and `password` then runs the `LocalStrategy` function that we defined earlier to see if the username and password are in the database. It then creates a session cookie that gets stored in the user's browser and used in all future requests to see whether or not that user is logged in.  It can also redirect you to different routes based on whether the login is a success or a failure.  If we had a separate login page we might want to go back to that if the login failed, or we might want to take the user to their user dashboard if the login is successful.  Since we're keeping everything in the index we want to go back to "/" no matter what.
+As you can see, all we have to do is call `passport.authenticate()`. This middleware performs numerous functions behind the scenes. Among other things, it looks at the request body for parameters named `username` and `password` then runs the `LocalStrategy` function that we defined earlier to see if the username and password are in the database. It then creates a session cookie that gets stored in the user's browser and used in all future requests to see whether or not that user is logged in.  It can also redirect you to different routes based on whether the login is a success or a failure. To access any error messages we defined earlier, we can pass `failureMessage` a boolean and access it later in subsequent middleware through the `req.session.messages` array.
+
+If we had a separate login page we might want to go back to that if the login failed, or we might want to take the user to their user dashboard if the login is successful. Since we're keeping everything in the index we want to go back to `/` no matter what.
 
 If you fill out and submit the form now, everything should technically work, but you won't actually SEE anything different on the page... let's fix that.
 
@@ -351,7 +354,7 @@ It's important to note that *how* hashing works, especially in the context of pa
 
 #### Comparing hashed passwords
 
-<span id='compare'>We will use the `bcrypt.compare()` function to validate the password input. The function compares the plain-text password in the request object to the hashed password</span>.
+We will use the `bcrypt.compare()` function to validate the password input. The function compares the plain-text password in the request object to the hashed password.
 
 Inside your `LocalStrategy` function we need to replace the `user.password !== password` expression with the `bcrypt.compare()` function.
 
@@ -363,7 +366,7 @@ if (!match) {
 }
 ```
 
-You should now be able to log in using the new user you've created (the one with a hashed password).  <span id='bcrypt'>Unfortunately, users that were saved BEFORE you added bcrypt will no longer work, but that's a small price to pay for security</span>! (and a good reason to include bcrypt from the start on your next project)
+You should now be able to log in using the new user you've created (the one with a hashed password).  Unfortunately, users that were saved BEFORE you added bcrypt will no longer work, but that's a small price to pay for security! (and a good reason to include bcrypt from the start on your next project)
 
 ### Assignment
 
@@ -377,15 +380,6 @@ You should now be able to log in using the new user you've created (the one with
 1. In [Passport: The Hidden Manual](https://github.com/jwalton/passport-api-docs), you can explore more comprehensive explanations of some of Passport's main functions, gaining a deeper understanding of what each function accomplishes.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [Which passport.js strategy did we use in the lesson?](#strategy)
-- [Why does passport.js create a cookie?](#cookie)
-- [What does the `bcrypt.compare()` function do?](#compare)
-- [Why should we include bcrypt when we begin a project?](#bcrypt)
 
 ### Additional resources
 

@@ -14,40 +14,32 @@ In this brief lesson, you'll get a chance to learn more about when and how to us
 
 This section contains a general overview of topics that you will learn in this lesson.
 
-- Why is recursion a useful technique for solving a big problem?
-- What are the limitations of using recursive solutions?
-- What types of problems are more suited for simple loops than recursion?
-- What is meant by "recursive depth"?
-- What is a "stack overflow" (the concept, not the website)?
-- Why is that relevant to a recursive problem?
+- Why recursion is a useful technique for solving large problems.
+- The limitations of using recursive solutions.
+- Which types of problems are better solved using loops instead of recursion.
+- The concept of "recursive depth".
+- What a "stack overflow" is (the concept, not the website).
+- Why stack overflow is relevant to recursive problems.
 
 ### Assignment
 
 <div class="lesson-content__panel" markdown="1">
 
-  1. Read the [Chapter on Recursion](http://ruby.bastardsbook.com/chapters/recursion/) in the Bastards Book of Ruby by Dan Nguyen.
-  1. Watch this [explanation of recursion by Web Dev Simplified](https://www.youtube.com/watch?v=6oDQaB2one8).
-  1. Watch this [Video on Recursion](https://www.youtube.com/watch?v=mz6tAJMVmfM) from CS50.
-  1. Read the ["Implementation Issues" section of the wiki article](http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm#Implementation_issues) to get an overview of some of the limitations of recursion.
+1. Read the [Chapter on Recursion](http://ruby.bastardsbook.com/chapters/recursion/) in the Bastards Book of Ruby by Dan Nguyen.
+1. Watch this [explanation of recursion by Web Dev Simplified](https://www.youtube.com/watch?v=6oDQaB2one8).
+1. Watch this [Video on Recursion](https://www.youtube.com/watch?v=mz6tAJMVmfM) from CS50.
+1. Read the ["Implementation Issues" section of the wiki article](http://en.wikipedia.org/wiki/Divide_and_conquer_algorithm#Implementation_issues) to get an overview of some of the limitations of recursion.
+1. If you haven't already, fork and clone the [ruby-exercises repo](https://github.com/TheOdinProject/ruby-exercises/) (you likely already did this while doing the `/ruby_basics/` exercises earlier in the Ruby course). `cd` into the `/recursion` directory and follow the instructions in the README there. Complete each of the recursion exercises in order, and pass the tests.
+
+   <div class="lesson-note lesson-note--tip" markdown="1">
+
+   #### Use a debugger!
+
+   It can be rather difficult trying to track what's going on in a recursive function layer by layer, don't put yourself through that! If you haven't already been making use of a debugger when solving some problems (you'll have been missing out on a lot if not!), now is as good a time as any to get familiar with it as it can help make navigating the code flow so much easier.
+
+   </div>
 
 </div>
-
-#### Test yourself
-
-<div class="lesson-content__panel" markdown="1">
-
-  1. Solve each of the questions from this [Code Quiz on recursion](http://www.codequizzes.com/computer-science/beginner/recursion).
-
-</div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How would you briefly define a recursive function?](#introduction)
-- [What is the point of recursion? Is it more efficient than using a plain loop?](http://ruby.bastardsbook.com/chapters/recursion/)
-- [What are the 2 essential parts in a recursive function?](https://youtu.be/mz6tAJMVmfM?t=193)
-- [Why is "stack overflow" relevant to a recursive problem?](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm#Stack_size)
 
 ### Additional resources
 

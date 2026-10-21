@@ -8,8 +8,7 @@ So before we get into the meat of the curriculum, we'll cover the following aspe
 
 This section contains a general overview of topics that you will learn in this lesson.
 
-- Recognize sensible mindsets that promote healthy learning.
-- Understand helpful ways to approach learning and struggling.
+- Helpful ways to approach learning and struggling.
 - Things to avoid along your learning journey with TOP.
 
 ### Motivation
@@ -22,22 +21,6 @@ Take a moment to think about why you have decided to learn programming.
 - Do you want to start your own company by turning an app idea into reality?
 
 Your motivation could be a combination of these reasons or something else entirely. Whatever it is, hold on tightly to your motivation - this will be what pulls you through to the end of this journey, giving you a definitive goal to aim towards.
-
-### Growth mindset
-
-Your mindset is very important when teaching yourself *any* new skills, not just programming. Your mindset will have more of an impact on your chances of success than just about anything else.
-
-Someone with the **fixed mindset** believes if they don't get something on their first attempt, they never will. They believe that they aren't smart enough to be able to do or understand some things.
-
-However, there is a wide body of research showing that intelligence is not fixed but can instead be developed. Someone with the **growth mindset** believes they can get better at anything with effort and persistence.
-
-What does this mean for you? It means you can learn new skills and develop new talents with **persistence and grit**.
-
-There will be many times throughout The Odin Project that you will get stuck on a concept or a programming problem and may find yourself questioning your ability to learn programming. When you find yourself in this position, remind yourself that you may not get it *yet* but that with persistence and grit you will. Struggling with something is growth. It doesn't matter how long you struggle with a concept or project; all that matters is that you have the grit and tenacity to see it through. That's how real learning happens.
-
-While you're working through the curriculum, embrace the struggles you encounter with difficult concepts and complex projects. Be sure to celebrate your persistence in overcoming those struggles!
-
-When you find yourself questioning your abilities, reflect on the successes you have already achieved while learning to program: the projects you have completed and the concepts you once didn't understand but now do. This is all the proof you need that you can do it.
 
 ### The learning process
 
@@ -57,21 +40,33 @@ You can practice this method of learning by helping others in our community.
 
 You will inevitably get stuck at some point in the curriculum, perhaps due to a concept that you are having difficulty understanding or perhaps due to something not working correctly in a project. Whatever it is, use the following tools to get unstuck:
 
-- Google it: You can be certain someone else out there has encountered the same problem as you at some point. A quick Google search can often lead to a solution.
+- Research it: You can be certain someone else out there has encountered the same problem as you at some point. A quick search with a search engine can often lead to a solution.
 - Take a break: Allow your diffuse learning state to work on the problem.
 - Ask for help in the [TOP Discord server](https://discord.gg/fbFCkYabZB); come prepared with your research. People will be more willing to help you when they can see you have already put effort into trying to figure out the solution on your own.
 
-Additionally, feel free to follow the diagram below to help you navigate problems that you may come across:
+![Diagram to help learners go through problems when they are stuck. Process described under the next heading "Problem solving steps"](https://cdn.statically.io/gh/TheOdinProject/curriculum/978ba0e91a6a47452de819246f4c495e6b092f54/foundations/introduction/motivation_and_mindset/imgs/00.png)
 
-![diagram to help learners go through problems when they are stuck](https://cdn.statically.io/gh/TheOdinProject/curriculum/978ba0e91a6a47452de819246f4c495e6b092f54/foundations/introduction/motivation_and_mindset/imgs/00.png)
+#### Problem solving steps
+
+1. Do the lesson.
+1. Practice the concept.
+1. Are you aware of how to solve the problem?
+   1. Yes: Nice!
+   1. No: Have you researched and experimented?
+      1. Yes: Have you asked for guidance?
+         1. Yes: Go back to step 2 (practice the concept).
+         1. No: Ask a question. Does the guidance received make any sense?
+            1. Yes: Go back to step 2 (practice the concept).
+            1. No: Go back to step 1 (do the lesson).
+      1. No: Research and experiment, then go back to step 2 (practice the concept).
 
 ### A note on AI code generation
 
 As technology advances, we have seen some incredible tools emerge that can help accelerate coding capacity. One particular area that has exploded in popularity lately is the usage of Large Language Models (LLMs) and generative AIs for code completion (like GitHub Copilot) and code generation (like ChatGPT).
 
-While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [wrote about ChatGPT and its potentially negative impacts on core learning.](https://blog.humphd.org/cheatgpt/) It is a good read about the pitfalls of using generative AI in an educational context.
+While these tools are amazing, learners should be aware of the impacts that using such tools can have on core competency. David Humphrey, a computer science professor, [wrote about ChatGPT and its potentially negative impacts on core learning](https://blog.humphd.org/cheatgpt/). It is a good read about the pitfalls of using generative AI in an educational context.
 
-For learners who are new to programming, tools like ChatGPT or GitHub Copilot can result in blindspots and gaps in your knowledge.
+For learners who are new to programming, tools like ChatGPT or GitHub Copilot can result in blindspots and gaps in your knowledge. This includes other AI output like Google's AI overview (which you can search up how to disable).
 
 1. By using a generative AI, learners may miss the opportunity to discover how something works and why things are done that way.
 1. Asking good questions is an important skill, and relying on generative AI instead of asking people (like our helpful Discord community) can delay the development of this skill.
@@ -108,6 +103,14 @@ Procrastination will be your biggest enemy when trying to make progress.
 The Pomodoro technique is great for avoiding procrastination as it forces you to work without distractions. Since the work time only lasts 25 minutes before taking a break, it's not overwhelming, making it harder to rationalize procrastination.
 
 If you want to try it out, [Pomofocus](https://pomofocus.io/) is a customizable pomodoro timer that works on desktop & mobile browser.
+
+#### Focusing on the end result
+
+Are you spending the majority of your time thinking about all of the things you want to do after getting through The Odin Project? Are you worried about how long it's going to take you? Is it filling you with so much dread to the point where it's painful and causing you to not make any progress at all? Surprise! This is another form of procrastination!
+
+**Solution:** Knowing that you can utilize the Pomodoro Technique for getting through your studies, the next step is to give yourself a goal of how many Pomodoros to do in a week, and focus on hitting that goal. Start small, work your way up to a manageable amount. If life changes, bring that number down, but never to zero if you can help it. One Pomodoro a week is better than none a week. As you go on you'll gain confidence and a cadence with studying, and then you can increase your weekly Pomodoro goal.
+
+Focusing on the process instead of the product of your studies provides a healthy, productive distraction that also doubles as making progress, because it is real progress!!!
 
 #### Not taking breaks
 
@@ -166,33 +169,7 @@ Learning any new skill is a journey full of speed bumps and obstacles to overcom
 
 <div class="lesson-content__panel" markdown="1">
 
+1. Have a look at how to [become a TOP Success Story](https://dev.to/theodinproject/becoming-a-top-success-story-mindset-3dp2)!
 1. Once you join the TOP Discord server, give your motivation a bit of a boost! Read about the success of others in the [TOP Discord server's Success Stories forum](https://discord.com/channels/505093832157691914/1089990025162260570).
-1. To learn more about the growth mindset, go through the following resources:
-   - [You can learn anything](https://www.khanacademy.org/college-careers-more/talks-and-interviews/talks-and-interviews-unit/conversations-with-sal/a/the-learning-myth-why-ill-never-tell-my-son-hes-smart)
-   - [Grit](https://ted.com/talks/angela_lee_duckworth_grit_the_power_of_passion_and_perseverance)
-   - [Believe you can get better](https://www.ted.com/talks/carol_dweck_the_power_of_believing_that_you_can_improve)
-1. To learn more about the best ways to learn, watch this summary of [Coursera's learning how to learn course](https://www.youtube.com/watch?v=O96fE1E-rf8). The full course is linked in the additional resources.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the key difference between a fixed mindset and a growth mindset when encountering programming challenges?](#growth-mindset)
-- [What are the two modes your mind switches between during the learning process, and how do they differ?](#the-learning-process)
-- [When you're stuck on a programming problem, what three main strategies does the curriculum recommend trying?](#what-to-do-when-youre-stuck)
-- [Why does the curriculum recommend against setting strict deadlines for completing The Odin Project?](#managing-your-study-time)
-- [How does Angela Duckworth define "grit" in her TED talk, and why is it important for learning to code?](#assignment)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [Becoming a TOP Success Story](https://dev.to/theodinproject/becoming-a-top-success-story-mindset-3dp2)
-- [Managing inspiration and motivation](https://markmanson.net/do-something)
-- [Learning to code when it gets dark](https://medium.freecodecamp.org/learning-to-code-when-it-gets-dark-e485edfb58fd#.yjh0fehje)
-- While thinking and research time is a bigger bottleneck than raw typing speed, if you'd like to improve your typing skills then some excellent options include [typing.com](https://www.typing.com/), [Keybr](https://www.keybr.com), and [Monkeytype](https://monkeytype.com/).
-- [Why Procrastinators Procrastinate](https://waitbutwhy.com/2013/10/why-procrastinators-procrastinate.html) Learn about the Instant Gratification Monkey, Rational Decision Maker, Panic Monster, and how to navigate the Dark Playground. [Short video introduction from the same author](https://youtu.be/arj7oStGLkU)
-- [100 Days of Code](https://www.100daysofcode.com/) is a challenge that new developers often use to track their coding journey and showcase their work. Consider checking out their website if you are looking for a way to stay motivated and inspire other developers.
-- Check out the [Learning How to Learn](https://www.coursera.org/learn/learning-how-to-learn) course from Coursera.

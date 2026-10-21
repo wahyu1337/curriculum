@@ -18,7 +18,7 @@ The word 'design' refers to making decisions about what kinds of things look nic
 
 Since the release of the first iPhone in 2007, it has become a *requirement* that your web projects function correctly on everything from normal desktop monitors to tiny phone screens.
 
-As you have likely discovered, this kind of responsiveness doesn't often happen automatically, especially once your projects get more complex than simple text on a page (your first HTML-only recipe project probably worked just fine on a phone, aside from the images getting cut off). So, when it comes down to it, <span id='what-is-responsive-design'>"Responsive Web Design" is a set of techniques you can use to make your sites work on any size screen.</span>
+As you have likely discovered, this kind of responsiveness doesn't often happen automatically, especially once your projects get more complex than simple text on a page (your first HTML-only recipe project probably worked just fine on a phone, aside from the images getting cut off). So, when it comes down to it, "Responsive Web Design" is a set of techniques you can use to make your sites work on any size screen.
 
 There are ways to make your designs flexible enough that they work well on most screens, and there are ways to dramatically change the layout of your page at certain sizes. You'll probably end up relying on both in most of your projects.
 
@@ -26,14 +26,10 @@ There are ways to make your designs flexible enough that they work well on most 
 
 The smallest phones in common circulation rarely get smaller than `320px`, so that should serve as a reliable lower end target. If your website works as low as `320px` width, then it should work on any small device. The upper limit is a little harder to clarify. These days super-duper-ultra-wide monitors aren't uncommon, so you should plan for the possibility that your site could be viewed on some ridiculously wide monitor. Often, this is accomplished by setting up a max-width for *all* of your content and then centering that on the page. With a setup like that your content will look fine even on super-wide resolutions.
 
-### Knowledge check
+### Assignment
 
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
+<div class="lesson-content__panel" markdown="1">
 
-- [What is Responsive Design?](#what-is-responsive-design)
+1. Read this Google Chrome DevTools guide on [how to simulate mobile device displays](https://developer.chrome.com/docs/devtools/device-mode/).
 
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- As usual, MDN has a great article on [Responsive Design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design), but it goes quite a bit deeper than we need right now.
+</div>

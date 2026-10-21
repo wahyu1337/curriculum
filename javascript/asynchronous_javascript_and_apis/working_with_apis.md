@@ -13,7 +13,7 @@ This section contains a general overview of topics that you will learn in this l
 
 ### APIs
 
-Servers that are created for serving data for external use (in websites or apps) are often referred to as APIs or ['Application Programming Interfaces'](https://www.youtube.com/watch?v=s7wmiS2mSXY).
+Servers created to provide functionality and serve data for external use (in websites or apps) often do so using APIs, or ['Application Programming Interfaces'](https://www.youtube.com/watch?v=s7wmiS2mSXY).
 
 There are multiple ways of requesting data from an API, but all of them basically do the same thing. For the most part, APIs are accessed through URLs, and the specifics of how to query these URLs change based on the specific service you are using. For example, [Visual Crossing](https://www.visualcrossing.com/weather-api) has a weather API that has several types of data you can request. To get the current weather in a specific location, you can pass in the name of a city into the path of the URL, like so:
 
@@ -111,10 +111,10 @@ In case you've forgotten, scroll back up and look at how you would use XHR to do
 
 Let's change up our API for this example. We're going to walk through an example using fetch with the [giphy](https://giphy.com/) API to display a random gif on a webpage. The API requires you [sign up to giphy and get a free API key](https://developers.giphy.com/docs/api/#quick-start-guide).
 
-Giphy has several methods for searching and finding GIFs which you can read about in their documentation. Today we're just going to use the 'translate' endpoint because it's the simplest one for our purposes. You can find the appropriate URL in their documentation by scrolling down [to the translate endpoint information from Giphy](https://developers.giphy.com/docs/api/endpoint#translate). What it tells us is that the correct URL is `api.giphy.com/v1/gifs/translate` and that it requires 2 parameters, your `api_key` and a `search term`. If you put it all together correctly (with YOUR API key) you should get something like this:
+Giphy has several methods for searching and finding GIFs which you can read about in their documentation. Today we're just going to use the 'random' endpoint because it's the simplest one for our purposes. You can find the appropriate URL in the [Giphy `random` endpoint documentation](https://developers.giphy.com/docs/api/endpoint/random). What it tells us is that the correct URL is `api.giphy.com/v1/gifs/random` and that it requires an `api_key` parameter. You can also provide a `tag` parameter to narrow down the GIFs returned. There are other optional parameters that you could include in your query. For example, the `rating` parameter allows you to look for content at different levels of sensitivity. If you put it all together correctly (with YOUR API key) you should get something like this:
 
 ```javascript
-'https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY_HERE&s=cats'
+'https://api.giphy.com/v1/gifs/random?api_key=YOUR_KEY_HERE&tag=cats&rating=g'
 // of course we're searching for cats
 ```
 
@@ -139,7 +139,7 @@ For now, we're going to keep all of this in a single HTML file. So go ahead and 
 </html>
 ```
 
-In the script tag, let's start by selecting the image and assigning it to a variable so that we can change the URL once we've received it from the Giphy API.
+In the script tag, let's start by selecting the image element and assigning it to a variable so that we can change the URL once we've received it from the Giphy API.
 
 ```html
 <script>
@@ -152,7 +152,7 @@ Adding fetch with our URL from above is also relatively easy:
 ```html
 <script>
   const img = document.querySelector('img');
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY_HERE&s=cats')
+  fetch('https://api.giphy.com/v1/gifs/random?api_key=YOUR_KEY_HERE&tag=cats&rating=g')
     .then(function(response) {
       console.log(response.json());
     });
@@ -164,7 +164,7 @@ You should now be able to open the HTML file in your browser, and while you won'
 ```html
 <script>
   const img = document.querySelector('img');
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY_HERE&s=cats')
+  fetch('https://api.giphy.com/v1/gifs/random?api_key=YOUR_KEY_HERE&tag=cats&rating=g')
     .then(function(response) {
       return response.json();
     })
@@ -183,7 +183,7 @@ To get to the data we need to drill down through the layers of the object until 
 ```html
 <script>
   const img = document.querySelector('img');
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY_HERE&s=cats')
+  fetch('https://api.giphy.com/v1/gifs/random?api_key=YOUR_KEY_HERE&tag=cats&rating=g')
     .then(function(response) {
       return response.json();
     })
@@ -198,7 +198,7 @@ Running the file should now log the URL of the image. All that's left to do is s
 ```html
 <script>
   const img = document.querySelector('img');
-  fetch('https://api.giphy.com/v1/gifs/translate?api_key=YOUR_KEY_HERE&s=cats')
+  fetch('https://api.giphy.com/v1/gifs/random?api_key=YOUR_KEY_HERE&tag=cats&rating=g')
     .then(function(response) {
       return response.json();
     })
@@ -208,9 +208,7 @@ Running the file should now log the URL of the image. All that's left to do is s
 </script>
 ```
 
-If all goes well, you should see a new image on the page every time you refresh!
-
-If you've gotten lost along the way, check out this [jsbin project demonstrating fetching from giphy](http://jsbin.com/canofar/edit?html,output). Besides the glorious styling, this is what your version should look like.
+If all goes well, you should see a randomly selected image on the page every time you refresh!
 
 While we are pushing this API key to the frontend, this isn't something you should do with any key that is not free. Keys used on the client-side are considered public knowledge, so caution must be taken with sensitive and non-free keys. Handling keys without pushing them to the frontend will be taught in later sections if you haven't already learned it in the Ruby course.
 
@@ -218,7 +216,6 @@ While we are pushing this API key to the frontend, this isn't something you shou
 
 <div class="lesson-content__panel" markdown="1">
 
-1. Read the [Fetch documentation on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch). It's not all that complicated to use, but we've only really scratched the surface at this point.
 1. Check out this [list of Public APIs](https://github.com/n0shake/Public-APIs) and let your imagination go wild.
 1. Expand on our little project here by adding a button that fetches a new image without refreshing the page.
 1. Add a search box so users can search for specific gifs. You should also investigate adding a `.catch()` to manage some errors (e.g. invalid URL). Keep in mind that if the API responds, even with something like a `404 Not Found` or some other non-2XX status response, that is still a valid response and `fetch` will therefore not throw an error, meaning the `.catch()` will not run. It may still end up running if your following JavaScript code throws an error, such as trying to access a property of `undefined`, or even if you manually throw an error yourself.
@@ -226,17 +223,3 @@ While we are pushing this API key to the frontend, this isn't something you shou
    If you want to conditionally handle any situations where the API does not give you the desired response (e.g. a `404 Not Found` or similar), you will need to do this manually in your `.then()`. Check out [MDN's docs for the Response object](https://developer.mozilla.org/en-US/docs/Web/API/Response) for some useful properties.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is an API?](#apis)
-- [How is access to an API restricted?](#apis)
-- [How do you fetch and extract data from an API?](#fetching-data)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- This [article on APIs by Ryan Thelin](https://www.educative.io/blog/what-is-an-api) covers some extra topics like API release policies, API protocols and API architectural styles.

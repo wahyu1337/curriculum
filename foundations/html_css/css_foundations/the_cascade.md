@@ -26,7 +26,7 @@ A CSS declaration that is more specific will take precedence over less specific 
 1. Class selectors
 1. Type selectors
 
-Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it, sort of like a tie-breaker. An ID selector will always beat any number of class selectors, <span id="high-specificity-class-type">a class selector will always beat any number of type selectors</span>, and a type selector will always beat any number of less specific selectors. When there is no declaration with a selector of higher specificity, a rule with a greater number of selectors of the same type will take precedence over another rule with fewer selectors of the same type.
+Specificity will only be taken into account when an element has multiple, conflicting declarations targeting it, sort of like a tie-breaker. An ID selector will always beat any number of class selectors, a class selector will always beat any number of type selectors, and a type selector will always beat any number of less specific selectors. If comparing specificity doesn't determine a winner, compare the number of selectors in the same category (ID, class, or type selectors). The rule with more selectors takes precedence.
 
 Let's take a look at a few quick examples to visualize how specificity works.
 Consider the following HTML and CSS code:
@@ -104,13 +104,9 @@ In this final example, the first rule uses an ID selector, while the second rule
 
 While the `color: red` declaration would take precedence, the `background-color: yellow` declaration would still be applied since there's no conflicting declaration for it.
 
-<div class="lesson-note" markdown="1">
-
 #### Not everything adds to specificity
 
-When comparing selectors, you may come across special symbols for the universal selector (`*`) as well as combinators (`+`, `~`, `>`, and an empty space). These symbols do not add any specificity in and of themselves.
-
-</div>
+When comparing selectors, you may come across special symbols for the universal selector (`*`) as well as combinators (`+`, `~`, `>`, and an empty space). The ones you have not yet seen, we will cover these later in the curriculum, so there is no need to dive into them yet. The core concept is that these symbols do not inherently convey any additional specificity.
 
 ```css
 /* rule 1 */
@@ -206,24 +202,10 @@ For an element that has both the `alert` and `warning` classes, the cascade woul
 
 <div class="lesson-content__panel" markdown="1">
 
+1. [The CSS Cascade](https://2019.wattenberger.com/blog/css-cascade) is a great, interactive read that goes a little more in detail about other factors that affect what CSS rules actually end up being applied.
 1. Complete the exercise in our [CSS exercises repository's `foundations/cascade` directory](https://github.com/TheOdinProject/css-exercises/tree/main/foundations/cascade) (remember that the instructions are in the README):
    - `01-cascade-fix`
 
     Note: Solutions for these exercises can be found in the `solution` folder of each exercise.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [Between a rule that uses one class selector and a rule that uses three type selectors, which rule has the higher specificity?](#high-specificity-class-type)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [The CSS Cascade](https://2019.wattenberger.com/blog/css-cascade) is a great, interactive read that goes a little more in detail about other factors that affect what CSS rules actually end up being applied.
-- [CSS Specificity Explained](https://www.youtube.com/watch?v=c0kfcP_nD9E) from Kevin Powell goes through various specificity examples and gives some advice on avoiding wrestling with specificity.
-- [CSS Specificity Calculator](https://specificity.keegan.st/) allows you to fill in your own selectors and have their specificity calculated and visualized.
-- [Interactive Scrim on the CSS Cascade.](https://v1.scrimba.com/scrim/c9gwmnAR)

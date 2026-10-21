@@ -500,29 +500,15 @@ Certain aspects of other elements are downright impossible to style, for example
 
 #### Form basics
 
-1. Read and follow along with [MDN's Introductory Guides to Forms](https://developer.mozilla.org/en-US/docs/Learn/Forms#introductory_guides) - complete [Your first form](https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form) and [How to structure a web form](https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_structure_a_web_form)
-1. Read and follow along with [MDN's The Different Form Controls Guides](https://developer.mozilla.org/en-US/docs/Learn/Forms#the_different_form_controls)
+1. Read and follow along with [MDN's "Introductory Tutorials" on forms](https://developer.mozilla.org/en-US/docs/Learn/Forms#introductory_tutorials).
+1. Read and follow along with [MDN's "The Different Form Controls" guides](https://developer.mozilla.org/en-US/docs/Learn/Forms#the_different_form_controls).
 
 #### Styling forms
 
-1. Read and follow along with [MDN's Form Styling Tutorials](https://developer.mozilla.org/en-US/docs/Learn/Forms#form_styling_tutorials)
-1. Read and follow along with [the internetingishard guide to forms](https://internetingishard.netlify.app/html-and-css/forms/index.html)
+1. Read and follow along with these three MDN form styling tutorials:
+   - [Styling web forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Styling_web_forms)
+   - [Advanced form styling](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling)
+   - [UI pseudo-classes](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/UI_pseudo-classes)
+1. Read and follow along with the [tutorial on forms by Interneting Is Hard](https://internetingishard.netlify.app/html-and-css/forms/index.html).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [Explain what the form element is for and what two attributes it should always include.](#the-form-element)
-- [Explain what form controls are at a high level.](#form-controls)
-- [What is the `name` attribute for?](#the-name-attribute)
-- [What are the three most common form controls you can use for allowing users to select predefined options?](#selection-elements)
-- [What are the three types of buttons in HTML?](#buttons)
-- [What are the two most challenging aspects of styling forms?](#a-note-on-styling-forms)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [Web.dev's Form Course](https://web.dev/learn/forms/)

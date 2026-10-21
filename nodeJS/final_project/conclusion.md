@@ -38,7 +38,6 @@ Here are a few extra resources that will take you a bit deeper into software arc
 
 - Explore additional [frameworks built on Express](https://web.archive.org/web/20240328030121/https://expressjs.com/en/resources/frameworks.html) that might be more suited to building certain types of applications.
 - Watch [more about APIs](https://www.youtube.com/watch?v=oBW_VNg4qD0) to learn a bit more about how APIs work.
-- [90 Days of DevOps](https://github.com/MichaelCade/90DaysOfDevOps) is a great repo if you wish to explore more about DevOps.
 - [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8) is a classic book on object-oriented design patterns.
 - Read [Clean Code](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship-ebook/dp/B001GSTOAM/ref=sr_1_1?dchild=1&keywords=Clean+Code&qid=1602168590&s=digital-text&sr=1-1) to learn principles for writing readable and maintainable code.
 - Check out [syntax.fm Podcast](https://syntax.fm), a podcast covering web development.
@@ -64,16 +63,3 @@ We want to emphasize again that the learning never really stops but also that yo
 1. Visit [our Discord server](https://discordapp.com/channels/505093832157691914/505093832157691916) to see what we're up to. We'd love to have you get involved!
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is a great first step after finishing the curriculum?](#next-steps)
-- [How can you get involved with contributing to The Odin Project curriculum?](#contributing)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

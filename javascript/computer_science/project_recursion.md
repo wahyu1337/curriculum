@@ -21,7 +21,6 @@ To understand what the merge sort algorithm is doing check out these resources:
 1. Watch this introductory video on [merge sort from Harvard's CS50x course](https://youtu.be/Ns7tGNbtvV4).
 1. Watch another explanation of [how merge sort works](https://www.youtube.com/live/iCx3zwK8Ms8?si=t7z6bEv_ZXIJDoHU&t=6550) (watch only until 2:04:05), this time from a part of a Harvard CS50x lecture.
 1. [The concept of merging](https://youtu.be/6pV2IF0fgKY) and [Merge Sort -- How it Works part](https://youtu.be/mB5HXBb_HY8) on YouTube give you a more formal look at this problem if you're still unclear.
-1. (Optional) Play with this [Merge Sort Visualizer](https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/visualize/) to get a better feel for exactly what is happening during a Merge Sort.
 
 <div class="lesson-note lesson-note--tip" markdown="1">
 
@@ -43,7 +42,7 @@ First up create a file and tackle the fibonacci sequence:
 1. Now write another function `fibsRec` which solves the same problem recursively.
 1. Test both versions of your functions by passing in various lengths as arguments.
 
-Hopefully you were able to solve the problem with recursion! If you need some help understanding what's going on with this function, the "Test it out" section below will help. If you're still a bit confused, there are some additional resources linked at the end of this page.
+Hopefully you were able to solve the problem with recursion! If you need some help understanding what's going on with this function, the "Test it out" section below will help.
 
 Once you have a firm grasp on solving Fibonacci with recursion, create a new file and work on a merge sort:
 
@@ -76,12 +75,3 @@ To showcase the recursive effect implemented in your Fibonacci function, do the 
 1. If the function is implemented correctly, you should see that sentence printed around 8 times (keep in mind that, depending on the way you implemented the function, you may see 7 instead of 8. This isn't a bug! It simply depends on how many times the function is *actually* repeated).
 
 </div>
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- An extensive written JavaScript solution for [recursive Fibonacci](https://www.scaler.com/topics/fibonacci-series-in-javascript/)
-- Another look at [merge sort](https://www.toptal.com/developers/sorting-algorithms/merge-sort)
-- Visualize and understand the [memory allocation for recursive functions](https://www.educative.io/courses/recursion-for-coding-interviews-in-javascript/NEZ7kKgMJKK).
-- For more attempts at recursion try the first 5 problems in [Project Euler](https://projecteuler.net/problems)

@@ -61,7 +61,7 @@ For demonstration purposes, we hardcoded a fixed port number above. Usually, the
 const PORT = process.env.PORT || 3000;
 ```
 
-If the specified port is already in use, we can change the environment variable value without editing the source code. Also, some hosting services configure their own ports which may differ from a fix value hardcoded in.
+If the specified port is already in use, we can change the environment variable value without editing the source code. Also, some hosting services configure their own ports which may differ from a fixed value hardcoded in.
 
 </div>
 
@@ -73,7 +73,7 @@ Whenever you navigate to any web URL this way, this is essentially what you are 
 
 Once you navigate to `http://localhost:3000/`, you should see `Hello, world!` appear in the window. Magic, right?
 
-When our server receives our `GET` request, Express stores the request in a [request object](https://expressjs.com/en/api.html#req). This request gets passed through a chain of functions we call `middleware functions` until eventually, a middleware function tells Express to respond to the request.
+When our server receives our `GET` request, Express stores the request in a [request object](https://expressjs.com/en/5x/api/request). This request gets passed through a chain of functions we call `middleware functions` until eventually, a middleware function tells Express to respond to the request.
 
 In our example, the request comes through as a `GET` request to the `/` path. This matches the route we have in our `app.js` file.
 
@@ -85,9 +85,9 @@ We will discuss routes in more detail in a later lesson, but to summarize the ab
 
 If we had defined multiple routes, Express would pass the request through the first route that matched the requested HTTP verb (e.g. `GET`) and path (`/`). The order of the routes matters!
 
-Express takes the callback function we gave it and passes the request object into the first parameter (conventionally named `req`), and a [response object](https://expressjs.com/en/api.html#res) into the second parameter (`res`). Our callback tells the response object to respond to the request by sending (via `res.send`) the string `"Hello, world!"`.
+Express takes the callback function we gave it and passes the request object into the first parameter (conventionally named `req`), and a [response object](https://expressjs.com/en/5x/api/response) into the second parameter (`res`). Our callback tells the response object to respond to the request by sending (via `res.send`) the string `"Hello, world!"`.
 
-There is no more code to run and the function returns. Since Express has been told to respond to the request, it ends the request-response cycle. Meanwhile, the browser receives our server's response and displays it on screen, which is our `"Hello, world!"` string. We could send nearly anything in our response. We could even [tell Express to send a file](https://expressjs.com/en/api.html#res.sendFile).
+There is no more code to run and the function returns. Since Express has been told to respond to the request, it ends the request-response cycle. Meanwhile, the browser receives our server's response and displays it on screen, which is our `"Hello, world!"` string. We could send nearly anything in our response. We could even [tell Express to send a file](https://expressjs.com/en/5x/api/response/#ressendfile).
 
 ### Auto-restarting your server upon file changes
 
@@ -103,18 +103,3 @@ You may also come across [Nodemon](https://www.npmjs.com/package//nodemon), a hi
 1. Go back to your [Basic Informational Site project](https://www.theodinproject.com/lessons/nodejs-basic-informational-site), install Express and rewrite the project using it! You should be able to do most of this with just a few `app.get()`s.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is Express?](https://expressjs.com/)
-- [What happens when a server receives a request?](#a-requests-journey)
-- [What can we use to tell Express to send a file in response to a request?](https://expressjs.com/en/api.html#res.sendFile)
-- [What can you use to automatically restart your server when you make changes to a file?](#auto-restarting-your-server-upon-file-changes)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

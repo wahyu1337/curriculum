@@ -62,9 +62,7 @@ module.exports = index;
 
 These two files, `app.js` and `index.js` define a couple of routes and then set up and start our express app. For the moment we do *not* need to test `app.js` because it only contains code that starts and runs an express app! It doesn't include any of our own logic so we don't need to test it. `index.js` however *does* include some things that we want to test.
 
-To facilitate actually testing these routes we're going to use a library called [SuperTest](https://github.com/visionmedia/supertest), so go ahead and `npm install supertest --save-dev` and while it's installing take a few minutes to look through the readme on their git repo (linked above).
-
-In the examples below we're going to use SuperTest inside of a Jest style describe/test block, but the syntax and use of these are common among most testing libraries, so the concepts should be easily replicated in Mocha with Chai or Jasmine or Tape or whatever testing library you prefer.
+To facilitate actually testing these routes we're going to use a library called [SuperTest](https://github.com/visionmedia/supertest), and for familiarity of test syntax, we'll use it in conjunction with Jest in this lesson's examples. Go ahead and `npm install jest supertest --save-dev` and while it's installing, take a few minutes to look through the README on SuperTest's Git repo (linked above).
 
 Here's our test file:
 
@@ -120,7 +118,7 @@ app.use("/", index);
 
 The tests themselves are relatively straightforward, thanks to the SuperTest library! Remember that we imported supertest as the function `request` which we use as seen below. We call it on our freshly created express app, pass it our route, and then use it to make sure that the responses match the types and content that we expect.
 
-Notice the parameter <span id="done">`done`</span> that is passed into the test callback.  Most testing libraries use this to signal that the test is complete in the case of asynchronous operations. In this case, SuperTest allows us to pass it into the last `.expect` and calls it for us.  Thanks, SuperTest!
+Notice the parameter `done` that is passed into the test callback.  Most testing libraries use this to signal that the test is complete in the case of asynchronous operations. In this case, SuperTest allows us to pass it into the last `.expect` and calls it for us.  Thanks, SuperTest!
 
 ```javascript
 test("index route works", done => {
@@ -158,18 +156,3 @@ If we were using a real database here, then we would want to do something simila
 1. SuperTest actually pulls from another related project called SuperAgent.  Any method that you can call in SuperAgent you can also call from SuperTest, so you'll need to take a look through the [SuperAgent docs](https://forwardemail.github.io/superagent/) as well.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the motivation behind SuperTest?](https://github.com/forwardemail/supertest#about)
-- [What is the purpose of `done`? What convenience does SuperTest provide concerning it?](#done)
-- [What is the difference in handling errors when using .end() method in conjunction with .expect() provided by SuperTest?](https://github.com/forwardemail/supertest#example)
-- [What are the methods provided by SuperAgent to handle multipart requests and how to use them?](https://forwardemail.github.io/superagent/#multipart-requests)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

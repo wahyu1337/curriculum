@@ -24,9 +24,9 @@ Here, the value of `color` is the function `rgb()`, which accepts arguments in t
 
 Unlike programming languages you’ll use in TOP, CSS does not allow us to create our own functions. Instead, the language comes bundled with a list of premade functions that will help you solve the most common styling problems.
 
-Besides defining colors, <span id='responsive-design-knowledge-check'>there are several CSS functions that are useful when designing a website’s layout and sizing<span>. These become important when thinking about responsive design.
+Besides defining colors, there are several CSS functions that are useful when designing a website’s layout and sizing. These become important when thinking about responsive design.
 
-Let’s go over a few of these functions: <span id='function-names-knowledge-check'>`calc()`, `min()`, `max()`, and `clamp()`.</span>
+Let’s go over a few of these functions: `calc()`, `min()`, `max()`, and `clamp()`.
 
 ### calc()
 
@@ -141,19 +141,3 @@ A font-size of `5vw` is set in-between. The value `5vw` allows the font-size to 
 1. Have a more in-depth look at the [`min`, `max` and `clamp` CSS functions](https://web.dev/min-max-clamp/) in action.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are the four CSS math functions we covered above?](#function-names-knowledge-check)
-- [How do we use CSS math functions in our CSS?](#what-is-a-function-and-how-are-they-used-in-css)
-- [How can CSS functions help make websites and applications more responsive?](#responsive-design-knowledge-check)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [Steve Griffith's video on CSS Math functions](https://www.youtube.com/watch?v=6QwMvf1Jq0M) gives a good visual overview of these functions.
-- Here are [some specific use cases for `min`, `max`, `clamp` and `calc`](https://moderncss.dev/practical-uses-of-css-math-functions-calc-clamp-min-max/), including color palette generation, background size responsiveness, and accessibility settings.
-- Ahmad Shadeed writes about [more real world use cases for CSS Math functions](https://ishadeed.com/article/css-min-max-clamp/) with more detailed explanations.

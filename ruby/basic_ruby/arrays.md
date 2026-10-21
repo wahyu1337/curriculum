@@ -151,20 +151,3 @@ Here is a brief look at some other common array methods you might run into:
 1. Let's get some practice reading documentation. You'll feel just like a real programmer! What do you think the methods `#clear`, `#insert`, `#sample`, `#shuffle`, and `#uniq` do? Look these methods up in the [Array class documentation](https://docs.ruby-lang.org/en/3.4/Array.html). Were you close?
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is an array and why is it useful?](#introduction)
-- [What are two ways to create a new empty array?](#creating-arrays)
-- [What are some ways of accessing the elements in an array?](#accessing-elements)
-- [What are 3 ways to add data to an array?](#adding-and-removing-elements)
-- [How can you remove elements from an array?](#adding-and-removing-elements)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- If you need a different take on arrays, read through this [alternative article on arrays by zetcode](http://zetcode.com/lang/rubytutorial/arrays/).
-- Arrays also allow for [set operations](https://www.endpointdev.com/blog/2011/06/using-set-operators-with-ruby-arrays/). Don't worry about the simple bookshelf example. Classes and Rails will be covered later!

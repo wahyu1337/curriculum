@@ -98,7 +98,7 @@ There are a few things going on here.
 
 ### Prop destructuring
 
-A very common pattern you will come across in React is prop [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment). Unpacking your props in the component parameters allows for more concise and readable code. Check out prop destructuring in action in the example below.
+A very common pattern you will come across in React is prop [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring). Unpacking your props in the component parameters allows for more concise and readable code. Check out prop destructuring in action in the example below.
 
 ```jsx
 function Button({ text, color, fontSize }) {
@@ -177,7 +177,7 @@ export default function App() {
 }
 ```
 
-While React now prefers the default parameter approach for function components, understanding `defaultProps` is still useful, especially when working with class components or older codebases.
+While React no longer accepts the latter approach for function components, understanding `defaultProps` is still useful, especially when working with class components or older codebases.
 
 ### Functions as props
 
@@ -266,18 +266,3 @@ Hopefully, you can now understand from the examples in this lesson just how incr
 1. Read through the React docs on [Passing Props to a Component](https://react.dev/learn/passing-props-to-a-component). Make sure to edit the code examples and experiment with different prop values.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How does data flow between React components? From child to parent? From parent to child? Both?](#data-transfer-in-react)
-- [Why do we use props in React?](#using-props-in-react)
-- [How do we define default properties on a React component? What are some benefits in doing so?](#default-props)
-- [How can we pass functions as props?](#functions-as-props)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

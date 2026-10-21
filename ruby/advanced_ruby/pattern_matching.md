@@ -568,7 +568,9 @@ The case/in format is best used when there are multiple conditionals you could p
 
 ### Find pattern
 
-As we saw earlier, we can match against part of a hash using the array pattern match. So what do you do if you need to match against part of an array? The as pattern would capture all of the array and the variable pattern captures individual parts of it. To address this, Ruby added the find pattern.
+An array pattern matches elements by position, starting from the beginning of the array. This makes it unsuitable when you want to match a value that may appear anywhere inside the array.
+
+While the as pattern can capture the entire array and variable patterns can capture individual elements, they still rely on positional matching. To allow matching a subsequence regardless of its position, Ruby introduced the find pattern.
 
 It works by placing a `*` either side of the part you want to match. You can even use the variable pattern to give each `*` a variable name to reference later. Let's look at some examples.
 
@@ -672,16 +674,6 @@ Pattern Matching provides a powerful way to get at the data you need in a way th
 1. Read the [Ruby docs on pattern matching](https://docs.ruby-lang.org/en/3.4/syntax/pattern_matching_rdoc.html). They cover quite a lot of ground.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is pattern matching?](https://docs.ruby-lang.org/en/3.4/syntax/pattern_matching_rdoc.html)
-- [What is the difference between array patterns and hash patterns?](https://docs.ruby-lang.org/en/3.4/syntax/pattern_matching_rdoc.html#label-Patterns)
-- [What is the variable pattern match?](#variable-pattern)
-- [What are the different ways of pattern matching on an array?](#array-pattern-match)
-- [Explain the find pattern.](#find-pattern)
 
 ### Additional resources
 

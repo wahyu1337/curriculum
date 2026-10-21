@@ -8,6 +8,7 @@ This contributing guide assumes you have followed the instructions in our genera
 
 - [How to Contribute](#how-to-contribute)
 - [Curriculum Linting](#curriculum-linting)
+- [Adding or Removing Lessons from the Curriculum](#adding-or-removing-lessons-from-the-curriculum)
 - [Adding Images to the Curriculum](#adding-images-to-the-curriculum)
 - [Updating Ruby Version](#updating-ruby-version)
 
@@ -17,7 +18,7 @@ Please refer to our [general contributing guide](https://github.com/TheOdinProje
 
 When it comes to opening a pull request (PR) to our curriculum, there are 2 main ways you can do so:
 
-1. Click the "Improve on GitHub" link found at the end of each lesson. This will open the lesson file in its "edit" mode, allowing you to make any edits and submit a PR all through GitHub. This can be useful if you're new to contributions and want to make a simple change.
+1. Click the "Edit on GitHub" link found at the end of each lesson. This will open the lesson file in its "edit" mode, allowing you to make any edits and submit a PR all through GitHub. This can be useful if you're new to contributions and want to make a simple change.
 1. Follow the instructions from the general contributing guide to fork and clone this repo locally, and work from there. This is necessary if you need to edit multiple files as part of a single PR.
 
 Regardless of the way you choose to open a PR, while working on an existing or a new lesson you **must** follow our [Layout Style Guide](https://github.com/TheOdinProject/curriculum/blob/main/LAYOUT_STYLE_GUIDE.md) to ensure the layout and formatting is consistent across our curriculum.
@@ -25,6 +26,9 @@ Regardless of the way you choose to open a PR, while working on an existing or a
 Before submitting a PR for any lesson, you must also use our [Lesson Preview Tool](https://www.theodinproject.com/lessons/preview) to ensure the lesson Markdown is correctly formatted and rendering properly.
 
 ## Curriculum Linting
+
+> [!NOTE]
+> For information about contributing to our custom linting rules, please read the [custom markdown linting contributing guide](./markdownlint/docs/README.md).
 
 To help enforce the layout specified in our layout style guide, we use [markdownlint](https://github.com/DavidAnson/markdownlint). Whenever a PR is opened or has updates made to it, a workflow will run to check any files changed in the PR against common rules as well as custom rules specific to TOP. To make the workflow easier, we also strongly suggest that users who have a local clone run this linter locally before committing any changes. There are 2 ways you can do so:
 
@@ -78,7 +82,25 @@ To help enforce the layout specified in our layout style guide, we use [markdown
 > - [TOP008](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP008.md) use-backticks-for-fenced-code-blocks
 > - [TOP010](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP010.md) use-lazy-numbering
 > - [TOP011](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP011.md) heading-indentation
-> - [TOP012](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP012.md) note-box-headings
+> - [TOP012](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP012.md) heading-levels
+
+## Adding or Removing Lessons from the Curriculum
+
+When adding or removing a lesson or project from the curriculum, two PRs will be needed: one in this repo to add the lesson file and one in the website repo to add the lesson to the database and site.
+
+We also archive lessons that we remove from the curriculum, as opposed to deleting them entirely.
+
+### Adding Lessons
+
+Lessons are written in markdown files (`.md`). Filenames should be in `snake_case`, with project filenames beginning with `project_` (e.g. `project_recipes.md`).
+
+1. Write the lesson file in the appropriate location, then open a PR in this repo with the new lesson.
+1. Go to the website repo and follow our [instructions for adding a lesson to the website](https://github.com/TheOdinProject/theodinproject/wiki/Adding-a-Lesson). Then, in the website repo, open a PR for the lesson additions (to the list of lessons *and* appropriate course lesson lists).
+
+### Removing Lessons
+
+1. Move the relevant lesson file to the `archive/` directory. Preserve the original file path (make any subdirectories as necessary). For example, if archiving `ruby/introduction/installing_ruby.md`, move it to `archive/ruby/introduction/installing_ruby.md`. This also applies to any images used in the archived lesson. Open a PR in this repo for the archiving.
+1. In the website repo, open a PR that removes the lesson from the appropriate lesson list in [`db/fixtures/lessons`](https://github.com/TheOdinProject/theodinproject/tree/main/db/fixtures/lessons) as well as removes the lesson entry from whichever path(s) in [`db/fixtures/path`](https://github.com/TheOdinProject/theodinproject/tree/main/db/fixtures/paths).
 
 ## Adding Images to the Curriculum
 
@@ -97,6 +119,8 @@ Adding images to the curriculum is a two-step process, involving two PRs. For a 
 
 ### Creating Statically Links
 
+Only do this bit once the PR to add the image file(s) to the repository has been merged.
+
 1. Go to the PR that added the image(s) to the repo.
 1. Right-click the commit ID where it was merged and select `copy link`.
 
@@ -111,9 +135,12 @@ Adding images to the curriculum is a two-step process, involving two PRs. For a 
 
 If you want to update the Ruby language version installed in the [Ruby Installation lesson](https://github.com/TheOdinProject/curriculum/blob/main/ruby/introduction/installing_ruby.md), there are a few additional changes that may need to happen:
 
+1. Update the version number in all of the OS-specific Ruby installation guide files. These can be found in [`/ruby/introduction/installation_guides/ruby`](https://github.com/TheOdinProject/curriculum/tree/main/ruby/introduction/installation_guides/ruby).
+
 1. Update the version number in the `.ruby-version` file in the following repos:
    - [custom_enumerable_project](https://github.com/TheOdinProject/custom_enumerable_project)
    - [ruby_testing](https://github.com/TheOdinProject/ruby_testing)
+
 1. Ruby uses [semver](https://en.wikipedia.org/wiki/Software_versioning#Semantic_versioning) for its versioning, where the first digit is a 'major' version, the second digit is a 'minor' version, and the third digit is a 'patch' version. **If you're updating the installation to a Ruby version that bumps the major or minor digits, then the documentation links throughout the Ruby course will need to be updated.** They use a URL like `https://docs.ruby-lang.org/en/x.y` where `x` and `y` digits denote the major and minor versions respectively. You'll need to find all the existing documentation links and replace them to reference the new version. You can do this through using your editor's global find and replace utility or through the command line. An example command that would update the docs from 3.3 to 3.4 if run from the curriculum root:
 
    ```bash

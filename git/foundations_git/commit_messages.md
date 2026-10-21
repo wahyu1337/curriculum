@@ -1,6 +1,6 @@
 ### Introduction
 
-This lesson will explain the importance of good commit messages, how to write them, when to commit, and why having a history of good commits is so important!
+This lesson will explain the importance of good commit messages, how to write them, when to commit, and why having a history of good commits is so important! We're learning this now because you're about to start your first project where you'll get to use Git as part of your workflow.
 
 ### Lesson overview
 
@@ -12,7 +12,7 @@ This section contains a general overview of topics that you will learn in this l
 
 ### Are commit messages so important they deserve their own lesson?
 
-Yes! Let me give you a quick list of reasons why:
+Yes! Let us give you a quick list of reasons why:
 
 - When you are applying for jobs, employers will look through your projects on GitHub and they will look through your commit history. Having good commits as a novice developer will help you stand out.
 
@@ -42,6 +42,8 @@ This is the change I made to the codebase
 
 <div class="lesson-note lesson-note--tip" markdown=1>
 
+#### Commit subject character limit
+
 GitHub has a 72-character limit, so we recommend keeping your commits' subjects within this amount.
 
 </div>
@@ -68,6 +70,8 @@ Ahh, that's better! :) Now, developers can gain a better understanding of this c
 - Contains a body that provides a concise yet clear description of why the commit needed to be made (e.g., "Screen readers won't read the images to users with disabilities without this information.").
 - Separates the subject from the body with a new/blank line. This is a best practice we highly recommend following. It makes commit messages easier for other developers to read.
 
+Some teams of developers might have their own convention for commit messages in specific formats. However, they still follow the same principles as this lesson outlined.
+
 ### How to commit with a subject and body in the message
 
 Up until now, you've been told to commit with `git commit -m <message>`. To make a commit with subject and body in message, the simplest way is to type `git commit` without the `-m` flag and message argument.
@@ -84,6 +88,13 @@ In other words, make a commit if you get a piece of code you are working on to f
 
 There will come a time when you are working on a project and you FINALLY get something just right (this would be a good time to commit), and then maybe 30 seconds to a few days later it breaks. You have no idea what you changed, everything *looks* to be the same and you don’t remember editing that line, but alas, it isn’t working how you want it anymore. You’d be able to go back through your commit history and either revert your code back to the last commit you made when you first got that part working or go back and see what your code looked like at that point in time.
 
+### Tips and things to remember
+
+- Using VSCode as your text editor (you should have set this up in the Git Basics section) will allow you to easily make multi-line commit messages, easily see the character length of each line, and will allow you to use [VSCode spell check extensions](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) to make sure your spelling is correct.
+- Use an active voice: "Fix card generator".
+- Avoid using vague commit messages such as "saved" or "updated".
+- Commit early and often!
+
 ### Assignment
 
 <div class="lesson-content__panel" markdown="1">
@@ -91,24 +102,3 @@ There will come a time when you are working on a project and you FINALLY get som
 1. This article, [How to Write a Git Commit Message](https://cbea.ms/git-commit), covers all the main bases on how to write good commit messages. The whole article is great and informative but the meat of the article is “The seven rules of a great commit message.”
 
 </div>
-
-#### Tips and things to remember
-
-- Using VSCode as your text editor (you should have set this up in the Git Basics section) will allow you to easily make multi-line commit messages, easily see the character length of each line, and will allow you to use [VSCode spell check extensions](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) to make sure your spelling is correct.
-- Use an active voice: "Fix card generator".
-- Avoid using vague commit messages such as "saved" or "updated".
-- Commit early and often!
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are two benefits of having well-written commit messages and a good commit history?](https://cbea.ms/git-commit/#intro)
-- [How many characters should the subject line of your commit message be?](https://cbea.ms/git-commit/#limit-50)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- One way to formulate high-information commit messages is to follow a template. [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) is one of many commit message templates that you can explore.
-- Explore this amazing tutorial video on Conventional Commits ➔ [Full Video Link](https://www.youtube.com/watch?v=OJqUWvmf4gg). The video showcases the Conventional Commits template from the resource above. It also mentions creating releases and shows using something called "Yarn". These two parts are out of scope for this part of the course, so don't worry about them and instead focus on the commit template.

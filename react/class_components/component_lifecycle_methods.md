@@ -16,7 +16,7 @@ The render function is the most used lifecycle method, and one that you've come 
 
 ### componentDidMount()
 
-This method is run after the component is mounted (inserted in the DOM tree). You should make any calls to fetch data that is needed for the component here. It is also a good place to do anything that is reliant on the component, such as fetching from an API.
+This method is run after the component is mounted (inserted in the DOM tree). You should make any calls to fetch data that is needed for the component here. It is also a good place to perform any operations that depend on the component being mounted in the DOM.
 
 ### componentDidUpdate()
 
@@ -57,19 +57,3 @@ In this snippet, the useEffect contains the functionality of `componentDidMount`
 1. Read through [component documentation](https://react.dev/reference/react/Component) from 'constructor(props)' up to 'componentWillUnmount()' in the Reference section, being mindful of deprecated APIs. Consider other APIs as supplementary information.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the only required lifecycle method?](#render)
-- [What lifecycle method should you use for initial data fetching?](#componentdidmount)
-- [When you want to act upon change of the DOM, or of state, what lifecycle method would you use?](#componentdidupdate)
-- [When performing cleanup actions, what lifecycle method should be used?](#componentwillunmount)
-- [How does the useEffect hook combine some of the lifecycle methods?](#how-useeffect-combines-the-lifecycle-methods)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

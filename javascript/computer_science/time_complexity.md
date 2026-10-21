@@ -341,21 +341,3 @@ Remember to ensure the code you write is as efficient as it can be within its ti
 1. Read the [Step-by-step Big O Complexity Analysis Guide, using JavaScript](https://www.sahinarslan.tech/posts/step-by-step-big-o-complexity-analysis-guide-using-javascript). It has a section on Space Complexity at the end which you can skip for now.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is Big O?](#what-is-big-o)
-- [What are the most common Big O Notations?](#big-o-notation)
-- [Why use Big O?](#why-big-o)
-- [What is Big Omega and why isn't it as useful?](#big-omega-notation)
-- [Why don't constants make a difference in Big O?](#algorithms-with-the-same-complexity)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It's not a free resource but [A common sense guide to data structures and algorithms](https://pragprog.com/titles/jwjavascript/a-common-sense-guide-to-data-structures-and-algorithms-in-javascript-volume-1) does a great job making these topics approachable to people not familiar with some of the mathematical terminology used.
-
-- In this video, [Introduction to Big O Notation and Time Complexity](https://www.youtube.com/watch?v=D6xkbGLQesk), the author provides a step-by-step process for how to analyze and understand time complexity for various algorithms.

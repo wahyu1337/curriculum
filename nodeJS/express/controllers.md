@@ -16,14 +16,14 @@ This section contains a general overview of topics that you will learn in this l
 
 When it comes to sending responses from our controllers, we have several methods at our disposal. Let's explore some of the commonly used methods and their use cases.
 
-- [res.send](https://expressjs.com/en/api.html#res.send) - A general-purpose method for sending a response, it is flexible with what data we can send since it will automatically set the `Content-Type` header based on what data you pass it. For example, if we pass in an object, it will stringify it as JSON and set the `Content-Type` header to `application/json`.
-- [res.json](https://expressjs.com/en/api.html#res.json) - This is a more explicit way to respond to a request with JSON. This always sets the `Content-Type` header to `application/json` and sends the data as JSON.
-- [res.redirect](https://expressjs.com/en/api.html#res.redirect) - When we want to redirect the client to a different URL, this method allows for that capability.
-- [res.render](https://expressjs.com/en/api.html#res.render) - `res.render` lets you render a view template and send the resulting HTML as the response. We'll cover this in a later lesson.
+- [res.send](https://expressjs.com/en/5x/api/response/#ressend) - A general-purpose method for sending a response, it is flexible with what data we can send since it will automatically set the `Content-Type` header based on what data you pass it. For example, if we pass in an object, it will stringify it as JSON and set the `Content-Type` header to `application/json`.
+- [res.json](https://expressjs.com/en/5x/api/response/#resjson) - This is a more explicit way to respond to a request with JSON. This always sets the `Content-Type` header to `application/json` and sends the data as JSON.
+- [res.redirect](https://expressjs.com/en/5x/api/response/#resredirect) - When we want to redirect the client to a different URL, this method allows for that capability.
+- [res.render](https://expressjs.com/en/5x/api/response/#resrender) - `res.render` lets you render a view template and send the resulting HTML as the response. We'll cover this in a later lesson.
 
 There is also a useful method that we can use to set the status code manually.
 
-- [res.status](https://expressjs.com/en/api.html#res.status) - This sets the response's status code **but does not end the request-response cycle by itself**. We can chain other methods through this (e.g. `res.status(404).send(...)` but note that we can't do `res.send(...).status(404)`). We can omit this if we wish to use the default status code of `200`.
+- [res.status](https://expressjs.com/en/5x/api/response/#resstatus) - This sets the response's status code **but does not end the request-response cycle by itself**. We can chain other methods through this (e.g. `res.status(404).send(...)` but note that we can't do `res.send(...).status(404)`). We can omit this if we wish to use the default status code of `200`.
 
 <div class="lesson-note" markdown="1">
 
@@ -391,20 +391,6 @@ As an exercise, feel free to create more sample data in our `db.js` file and con
 1. Watch this short 10 minutes [video tutorial of the MVC pattern](https://www.youtube.com/watch?v=Cgvopu9zg8Y). There is not much to this other than consolidating what you already know.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are the common response methods and their use cases?](#handling-responses)
-- [What are the types of middleware?](#middleware)
-- [How does a middleware get executed? In which order?](#middleware)
-- [What does calling the next function do? What if we pass an error argument?](#what-is-the-next-function)
-- [What are the other arguments you can pass to the next function?](#what-is-the-next-function)
-- [What is a controller?](#controllers)
-- [What is the difference between a controller and a middleware?](#controllers)
-- [What happens if you define a middleware function with four parameters?](#error-handler-middleware)
-- [What would you do to create a custom error?](#creating-custom-errors)
 
 ### Additional resources
 

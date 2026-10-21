@@ -116,7 +116,9 @@ The important distinction between the "scalar" parameter values like strings and
 
 <div class="lesson-note" markdown="1">
 
-  This used to be done in Rails 3 by setting `attr_accessible` in the model to allow attributes, so you will probably see that in a lot of Stack Overflow posts and earlier applications.
+#### Whitelisting "safe" attributes in Rails 3
+
+This used to be done in Rails 3 by setting `attr_accessible` in the model to allow attributes, so you will probably see that in a lot of Stack Overflow posts and earlier applications.
 
 </div>
 
@@ -164,15 +166,17 @@ So our `#create` action above can now be filled out a bit more:
 
 <div class="lesson-note lesson-note--warning" markdown="1">
 
-  Prior to Rails 8, strong parameters were handled differently. Instead of the `#expect` method, you had to call `#require` on the top level key name followed by calling `#permit` on the list of attributes. For example:
+#### Handling strong parameters before Rails 8
 
-  ```ruby
-  def allowed_post_params
-    params.require(:post).permit(:title, :body, :author_id)
-  end
-  ```
+Prior to Rails 8, strong parameters were handled differently. Instead of the `#expect` method, you had to call `#require` on the top level key name followed by calling `#permit` on the list of attributes. For example:
 
-  This way still works, but it has a couple of security flaws that motivated the development of `#expect`. But you will likely be exposed to this way of doing it through older projects, blog posts, and StackOverflow answers. Just know that this is serving the same function as the new `#expect` method.
+```ruby
+def allowed_post_params
+  params.require(:post).permit(:title, :body, :author_id)
+end
+```
+
+This way still works, but it has a couple of security flaws that motivated the development of `#expect`. But you will likely be exposed to this way of doing it through older projects, blog posts, and StackOverflow answers. Just know that this is serving the same function as the new `#expect` method.
 
 </div>
 
@@ -229,18 +233,6 @@ That's really just a taste of the Rails controller, but you should have a pretty
   1. Read the [Rails Guides chapter on Controllers](http://guides.rubyonrails.org/action_controller_overview.html), sections 1 - 4.3 and section 6.2. We'll cover sessions (section 6.1) more in the future so don't worry about them now.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What does a controller do?](https://guides.rubyonrails.org/action_controller_overview.html#what-does-a-controller-do-questionmark)
-- [Why is it important to adhere to the Rails naming convention for your controllers and all of its methods?](#naming-matters)
-- [What is the difference between `render` and `redirect_to`?](#rendering-and-redirecting)
-- [Which variable in your controller contains all the data sent in by the user?](https://guides.rubyonrails.org/action_controller_overview.html#parameters)
-- [Data from a client can never be trusted. Which helper method should you incorporate in your controller to prevent malicious data injections?](#strong-parameters)
-- [When is a flash message shown?](https://guides.rubyonrails.org/action_controller_overview.html#the-flash)
-- [How do we change when a flash is shown?](https://guides.rubyonrails.org/action_controller_overview.html#flash-now)
 
 ### Additional resources
 

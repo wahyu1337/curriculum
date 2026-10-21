@@ -16,8 +16,7 @@ TOP uses Markdown for the layout and formatting of lesson and project files to g
 ## Table of Contents
 
 1. [Language](#language)
-1. [Lesson layout](#lesson-layout)
-1. [Project layout](#project-layout)
+1. [Layouts](#layouts)
 1. [Headings](#headings)
 1. [Newlines](#newlines)
 1. [Lists](#lists)
@@ -38,7 +37,7 @@ TOP's lessons use American English spelling and punctuation. When adding content
 
 Markdownlint: [`lesson-headings`](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP004.md), [`default-section-content`](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP003.md)
 
-In general, the following layouts should be used for all lessons and projects. Text that should be replaced with the author's own content will be in all CAPS, with any additional information regarding a section listed at the end of the layout code block.
+In general, the following layouts should be used for all lessons and projects (see [lesson layout exceptions](#layout-exceptions)). Text that should be replaced with the author's own content will be in all CAPS, with any additional information regarding a section listed at the end of the layout code block.
 
 When adding new lessons or projects, make a copy of either the [lesson template](./templates/lesson-template.md) or the [project template](./templates/project-template.md) in the appropriate folder where the new lesson/project should be placed. Then begin editing the template copy.
 
@@ -74,17 +73,11 @@ CUSTOM SECTION CONTENT.
 
 </div>
 
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [A KNOWLEDGE CHECK QUESTION](A-KNOWLEDGE-CHECK-URL)
-
 ### Additional resources
 
 This section contains helpful links to related content. It isn't required, so consider it supplemental.
 
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.
+- Check out this [lecture on independent research](https://www.youtube.com/watch?v=dQw4w9WgXcQ) for a deeper dive.
 ```
 
 1. `### Introduction`: A brief summary on what the lesson is about and/or why the topics or concepts it covers are important. Replace the `A BRIEF INTRODUCTION.` text with your own lesson introduction.
@@ -99,7 +92,7 @@ This section contains helpful links to related content. It isn't required, so co
 
    Each assignment item should include some brief text that further informs the user on why it is included in the assignment or what purpose it serves. When necessary, an assignment item should also explicitly state any instructions that should be followed. Examples of instructions can include (but aren't limited to) a specific section the user should read, whether the user should complete any specific exercises, and whether the user should redirect themselves to additional links within the resource.
 
-   Replace the `A RESOURCE OR EXERCISE ITEM.` text with your own text and a link to the resource or exercise (or any applicable instructions if an exercise isn't external), then add any additional numbered assignment items. The lesson should ideally have no more than 3-5 assignment items (reading several sections on a web page or completing a folder of 5 exercises would be considered a single assignment item). **If the lesson does not have an assignment, remove this entire section from the lesson.**
+   Replace the `A RESOURCE OR EXERCISE ITEM.` text with your own text and a link to the resource or exercise (or any applicable instructions if an exercise isn't external), then add any additional numbered assignment items. The lesson should ideally have no more than 3-5 assignment items (reading several sections on a web page or completing a folder of 5 exercises would be considered a single assignment item).
 
    If an assignment item includes any instructions, replace the `AN INSTRUCTION ITEM` text with a single instruction, then add any additional bulleted instruction items.
 
@@ -107,17 +100,9 @@ This section contains helpful links to related content. It isn't required, so co
 
    **If an assignment item does not have any instructions, remove the bulleted `AN INSTRUCTION ITEM` text from it.**
 
-1. `### Knowledge check`: A bulleted list of specific questions that should aid users in reflecting on the lesson's key topics. A knowledge check should only link either to a section within the lesson (either with a Heading 3 `###` or Heading 4 `####`, or by wrapping text in a `<span>` element with an `id` attribute), or a resource previously linked to in the lesson. This link should help users review the applicable material without requiring them to re-read the entire lesson.
+1. `### Additional resources`: An **optional** bulleted list of optional resources for the user to read. Additional resources should be related to the content of the lesson in some way, without being necessary to gain an understanding of the lesson content. An additional resource should include brief text that further informs the user on why it is included or what purpose it serves, and generally should stand out in some way from the lesson content and other additional resources. A good rule of thumb is to try and answer, "what purpose does this resource serve?"
 
-   Replace the `A KNOWLEDGE CHECK URL` text with the actual link to the section/resource and the `A KNOWLEDGE CHECK QUESTION.` text with your own question/problem that the user should be able to answer/solve. Then add any additional bulleted knowledge check items. The lesson should ideally have no more than 7 knowledge checks, but this number might vary by lesson. **If the lesson does not have a knowledge check, remove this entire section from the lesson.**
-
-   In order to link to a Heading 3 `###` or Heading 4 `####` within the lesson, replace the value within the parenthesis for the knowledge check link with a hashtag `#` followed immediately by the section title in lowercase and any spaces replaced with a hyphen `-`. For example, a Heading 3 section titled `### Creating a method` would be linked to with `(#creating-a-method)`.
-
-   In order to link to a `<span>` element within the lesson, replace the value within the parenthesis with the exact `id` attribute of the `<span>` element (this will be case sensitive). For example, a `<span id="Knowledge-Check-3">` element would be linked to with `(#Knowledge-Check-3)`.
-
-1. `### Additional resources`: A bulleted list of optional resources for the user to read. Additional resources should be related to the content of the lesson in some way, without being necessary to gain an understanding of the lesson content. An additional resource should include brief text that further informs the user on why it is included or what purpose it serves, and generally should stand out in some way from the lesson content and other additional resources. A good rule of thumb is to try and answer, "what purpose does this resource serve?"
-
-   **If the lesson doesn't include any additional resources, leave this section as-is**. Otherwise, replace the default bulleted resource item with your own resource, then add any additional bulleted resource items. The lesson should ideally have no more than 3-5 additional resources.
+   **This section must only be present if there are additional resources. If there are none, the section should not be included at all.**.
 
 ### Project layout
 
@@ -143,10 +128,6 @@ OPTIONAL PRE-ASSIGNMENT SECTION CONTENT.
 - AN OPTIONAL ADD-ON/USER STORY.
 
 </div>
-
-### OPTIONAL POST-ASSIGNMENT SECTION HEADING
-
-OPTIONAL POST-ASSIGNMENT SECTION CONTENT.
 ```
 
 1. `### Introduction`: A brief summary on what the project is and an overview of what the user will be building. Replace the `A BRIEF INTRODUCTION.` text with your own project introduction.
@@ -157,7 +138,32 @@ OPTIONAL POST-ASSIGNMENT SECTION CONTENT.
 
 1. `#### Extra credit`: A bulleted list of items that describe any optional add-ons or user stories that might make a user's project stand out. Replace the `AN OPTIONAL ADD-ON/USER STORY.` text with your own add-on, then add any additional bulleted add-on items. **If the project does not have any extra credit items, remove the extra credit section from the assignment.**
 
-1. `### OPTIONAL POST-ASSIGNMENT SECTION HEADING`: A section that contains content that should come after the actual project assignment. This section will most likely not be needed for most projects, but when it is needed simply replace the `OPTIONAL POST-ASSIGNMENT SECTION HEADING` text with a proper section heading and the `OPTIONAL POST-ASSIGNMENT SECTION CONTENT.` text with your own content. Then add any additional post-assignment sections. **If the project does not have a post-assignment section, remove this entire section from the project.**
+### Guide layout
+
+Guide files are reference content that provide detailed instructions for specific tasks (like OS installations or software setup). They are stored in folders ending with `_guides` (e.g., `installation_guides/`) and are linked from lessons rather than being standalone lessons themselves.
+
+```markdown
+### Guide: DESCRIPTIVE TITLE
+
+GUIDE CONTENT WITH ANY HEADING STRUCTURE.
+```
+
+1. `### Guide: DESCRIPTIVE TITLE`: The first heading must start with `### Guide:` followed by a descriptive title that clearly indicates what the guide covers (e.g., "Virtual Machine installation", "Install Chrome on Linux").
+
+1. After the initial guide heading, any heading structure is allowed. Guide files are flexible and should be structured in whatever way best serves their instructional purpose.
+
+1. Guide files should include a link back to the lesson they're referenced from at the end of the file.
+
+Guide files in `*_guides/` folders are automatically excluded from the standard lesson/project heading structure requirements but still follow all other markdown linting rules.
+
+### Layout exceptions
+
+There are a few lessons where it does not make sense to enforce any particular heading structure, such as course intro lessons or course conclusions. Lessons with the following exact file names are not required to follow either of the layouts described above:
+
+- `how_this_course_will_work.md`
+- `conclusion.md`
+- `conclusion_full_stack_javascript.md`
+- `conclusion_ruby_on_rails.md`
 
 ## Headings
 
@@ -518,13 +524,13 @@ See the <a href="./templates/lesson-template.md" target="_blank" rel="noreferrer
 See the [lesson template](./templates/lesson-template.md) for a more easily copyable lesson file.
 ```
 
-### Use informative titles
+### Use informative text labels
 
 Markdownlint: [`descriptive-link-text-labels`](https://github.com/TheOdinProject/curriculum/blob/main/markdownlint/docs/TOP001.md), [`no-empty-links`](https://github.com/DavidAnson/markdownlint/blob/main/doc/md042.md)
 
-Markdown link syntax allows you to set a link title, just as HTML does. Use it wisely.
+Markdown link syntax allows you to set text for a link, just as HTML does. Use it wisely.
 
-Titling your links as "link" or "here" tells the reader precisely nothing when quickly scanning your doc and is a waste of space. Instead, write the sentence naturally, then go back and wrap the most appropriate phrase with the link:
+Links saying "link" or "here" tell the reader precisely nothing when quickly scanning your doc and is a waste of space. Users of screen readers will also not get any surrounding context when listing or reading out links, which will only list or read out the link's text/accessible name. Instead, write the sentence naturally, then go back and wrap the most appropriate phrase with the link:
 
 ```markdown
 See the [lesson template](./templates/lesson-template.md) for a more easily copyable lesson file.
@@ -542,6 +548,27 @@ Go look at our [installations guide here](...url)
 Check out this [video on flex-grow from CoolYoutuber](...url)
 Go look at our [installations guide](...url)
 ```
+
+On the rare occasion, it may be awkward and undesirable to have the link text stand by itself. An example is a list of links to OS-specific instructions for the same specific installation step, where it may look visually awkward with repeated long links. In such cases, you can explicitly provide an accessible name for the link within the URL parentheses, after the URL and in double quotes. Our markdown converter will add this text as both a [`title` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title) and [`aria-label` attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-label). The link text should still provide context for sighted users, so would still be subject to rules about "this" or "here".
+
+> [!CAUTION]
+> This feature should ideally be avoided unless there is strong justification against the link text being sufficiently informative by itself. In most cases, it would be more desirable for the link text to be the accessible name and thus sufficiently descriptive.
+
+```markdown
+<!-- Acceptable but can be visually noisy and trickier to read -->
+1. Depending on the OS you are running, follow the appropriate VSCode installation guide below:
+   - [Linux VSCode installation instructions](https://link.com/0)
+   - [macOS VSCode installation instructions](https://link.com/1)
+   - [WSL2 VSCode installation instructions](https://link.com/2)
+
+<!-- Also accessible while visually cleaner -->
+1. Depending on the OS you are running, follow the appropriate VSCode installation guide below:
+   - [Linux](https://link.com/0 "Linux VSCode installation instructions")
+   - [macOS](https://link.com/1 "macOS VSCode installation instructions")
+   - [WSL2](https://link.com/2 "WSL2 VSCode installation instructions")
+```
+
+### Use the same label for the same href
 
 Additionally, if there are multiple links in a lesson that redirect to the same `href`, the link text for each link must be the same. For example:
 

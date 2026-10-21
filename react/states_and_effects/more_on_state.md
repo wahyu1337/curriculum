@@ -107,7 +107,7 @@ The `person` state stays the same throughout the current render of the component
 
 #### The unexpected infinite loop
 
-The following is an infinite loop; can you guess why? Drop by in the [TOP Discord server](https://discord.gg/fbFCkYabZB), tell us why, and score a brownie point!
+The following would cause an infinite loop, but React can, under certain circumstances, detect infinite re-renders and throw an error. Can you guess why React will throw an error here, warning you about too many re-renders? Drop by in the [TOP Discord server](https://discord.gg/fbFCkYabZB), tell us why, and score a brownie point!
 
 ```jsx
 function Component() {
@@ -177,7 +177,7 @@ function CustomInput() {
 
 Instead of letting the `input` maintain its own state, we define our own state using the `useState` hook. We then set the `value` prop of the `input` to the state variable and update the state variable on every `onChange` event. Now, every time the user types something in the input, React will ensure you have the latest comment, review, or post (whatever the user was typing) in `value`.
 
-This pattern is extremely useful wherever you need user input, i.e., typing in a textbox, toggling a checkbox, etc. Contrarily, yes, the `input` element can be left uncontrolled and access its value through some other method. You don't need to worry about it yet, as it will be covered later on in the course. For now, control your components!
+This pattern is extremely useful wherever you need more control over user input, such as live validation or anything else that may require you to access the latest state value from these inputs. Contrarily, yes, the `input` element can be left uncontrolled and access its value through some other method. You don't need to worry about it yet, as it will be covered later on in the course. For now, control your components!
 
 ### Assignment
 
@@ -194,20 +194,3 @@ This pattern is extremely useful wherever you need user input, i.e., typing in a
    - There are many ways you can do this. Keep in mind what you've learned in this lesson while coding it out.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What should you keep in mind while declaring state?](#how-to-structure-state)
-- [Why should we always use `setState` to update our state?](#state-should-not-be-mutated)
-- [What does "state as a snapshot" mean?](#how-state-updates)
-- [What's the difference between passing a value vs a callback to the `setState` function?](#state-updater-functions)
-- [Why should we always provide a new Object to `setState`?](#objects-and-arrays-in-state)
-- [Why would you want to control a component?](#controlled-components)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- We intentionally skipped some of the articles pertaining to state from the React documentation. We are confident that the concepts covered thus far will equip you with enough knowledge to tackle the projects to come in the course. Though if you want to delve into the topic further, you can read all of the articles in the [Adding Interactivity](https://react.dev/learn/adding-interactivity) and the [Managing State](https://react.dev/learn/managing-state) section.

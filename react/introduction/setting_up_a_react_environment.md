@@ -45,7 +45,7 @@ Create React App, or CRA, was the official way to scaffold new React projects si
 
 ### Simplifying the process
 
-Now that you understand what is involved with starting a React project from scratch, you can breathe a sigh of relief to learn that we can get started with a *single terminal command*.
+Now that you understand what is involved with starting a React project from scratch, you can breathe a sigh of relief to learn that we can get started with a *single terminal command*. We'll be using Vite's own React template to scaffold our project, just like if we made and used our own template repo.
 
 Vite builds frontend tools for developers and it leverages the latest technologies under the hood to provide a great developer experience. Fortunately, it also caters to the React ecosystem. We will use Vite's CLI to quickly create a template React project. It requires minimal configuration and provides extremely useful tools right out of the box, allowing us to get straight to the learning. Let's get started!
 
@@ -57,7 +57,7 @@ Please make sure that you are using the latest *LTS* version of Node, otherwise 
 npm create vite@latest my-first-react-app -- --template react
 ```
 
-You may be asked if you want to install the `create-vite` package, in which case you should accept by typing `y` then hitting <kbd>Enter</kbd>. Next, you will be asked if you want to `Use rolldown-vite (Experimental)?` and to `Install with npm and start now?`. You can confirm the default choice for both options, by pressing <kbd>Enter</kbd> for each of those questions.
+You may be asked if you want to install the `create-vite` package, in which case you should accept by typing `y` then hitting <kbd>Enter</kbd>. If it asks you any questions about using experimental features, you can answer no to them. Finally, answer yes to `Install with npm and start now?`.
 
 Once the command has executed, it should output the following:
 
@@ -69,9 +69,9 @@ Once the command has executed, it should output the following:
 
 Provided everything has gone according to plan, head over to `localhost:5173`, where you'll be greeted with the following page:
 
-![Vite React template homepage](https://cdn.statically.io/gh/TheOdinProject/curriculum/73199c4e9e43e8d87f8759e026c13b63fcfe73c7/react/introduction/setting_up_a_react_environment/imgs/vite_react_homepage.png)
+![Vite React template homepage](https://cdn.statically.io/gh/TheOdinProject/curriculum/9200680864d044390aeb1baa838f213addd65cbe/react/introduction/setting_up_a_react_environment/imgs/vite_react_homepage.png)
 
-Congratulations! You've created your first React app. You can now exit out of the dev server (<kbd>Ctrl</kbd> + <kbd>C</kbd>) and `cd` into your project directory.
+Congratulations! You've created your first React app. You can now exit out of the dev server (<kbd>Ctrl</kbd> + <kbd>C</kbd>) and `cd` into your project directory. You can start the dev server any time within the project directory by running `npm run dev`.
 
 To link your local project directory to a GitHub repo, create a new **empty** repo on GitHub then follow the instructions in the new repo's page to connect it to your local project directory.
 
@@ -137,21 +137,3 @@ We recommend installing this and becoming comfortable using it as early as possi
 1. Try to clean up your `my-first-react-app` project so that it no longer displays the default page. See if you can get it to display a "Hello, World!" message instead.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are some of the ways we can start a new React project?](#many-paths)
-- [Why should we initially be using pre-made toolchains instead of making our own?](#many-paths)
-- [What is Vite and why would we use it?](#simplifying-the-process)
-- [What command can we run to scaffold a new React project using Vite?](#creating-a-react-app)
-- [What is in the `public` folder?](#delving-deeper)
-- [What is in the `src` folder?](#delving-deeper)
-- [Why are the React Developer Tools useful?](#developer-tools)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [Intro to React Dev Tools](https://www.youtube.com/watch?v=rb1GWqCJid4) gets you up to speed with a quick overview of the basic features of React Dev tools in Chrome.

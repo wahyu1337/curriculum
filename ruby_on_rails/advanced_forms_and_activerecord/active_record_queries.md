@@ -55,7 +55,7 @@ You should care that ActiveRecord queries usually return Relations because you'l
 
 If you end up working with a Relation when you really want it to act like an Array, you can sometimes run `#to_a` on it to force it to evaluate the query.
 
-Methods implemented in `ActiveRecord::FinderMethods` do NOT return `ActiveRecord::Relation` objects. The `#find`, `#find_by`, `#first` and `#last` methods return a single record (a model instance). `#take` returns an array of model instances. Unlike the methods that return `Relation` objects, when called, these will run SQL queries immediately.
+Methods implemented in `ActiveRecord::FinderMethods` do NOT return `ActiveRecord::Relation` objects. The `#find`, `#find_by`, `#first` and `#last` methods return a single record (a model instance). `#take` returns either a single model instance, or an array of them if a parameter is provided. Unlike the methods that return `Relation` objects, when called, these will run SQL queries immediately.
 
 ### Beyond basic querying
 
@@ -306,19 +306,6 @@ This was a lot of material, but you should have a healthy appreciation for the b
 1. Read section 19 “Finding by SQL” of the same Rails guide for a look at [using SQL directly to query](http://guides.rubyonrails.org/active_record_querying.html#finding-by-sql).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How does lazy evaluation help make Active Record more efficient?](#relations-and-lazy-evaluation)
-- [How do you check whether a database already contains a record?](#checking-for-existence)
-- [What is the difference between a `#where` query and a `#find` query?](#more-assorted-querying-knowledge)
-- [How do you join tables together in Rails?](#joins)
-- [What is an example of an N+1 query?](#n1-queries-and-eager-loading)
-- [What method is used to deal with an N+1 query?](#n1-queries-and-eager-loading)
-- [When would you use a class method in place of a scope?](#scopes)
-- [When should you consider using enums?](#why-use-enums)
 
 ### Additional resources
 

@@ -12,7 +12,7 @@ This section contains a general overview of topics that you will learn in this l
 
 ### Browser history
 
-<span id="first-web-browser">The history of modern browsing began back in December of 1990 with the release of WorldWideWeb browser.</span> It was written by Tim Berners-Lee while working for the European nuclear research agency known as CERN. It was later renamed to Nexus, to avoid confusion with the World Wide Web.
+The history of modern browsing began back in December of 1990 with the release of WorldWideWeb browser. It was written by Tim Berners-Lee while working for the European nuclear research agency known as CERN. It was later renamed to Nexus, to avoid confusion with the World Wide Web.
 
 Nexus was the first of its kind, and allowed users to view basic style sheets, read newsgroups, and even had spellcheck! It might not seem like a lot today, but at that time it was truly groundbreaking.
 
@@ -20,7 +20,7 @@ The release of Nexus was just the beginning though, as in the next decade people
 
 In 1995 the world got introduced to the first version of Internet Explorer, which became the dominant player in the market. At some point, Internet Explorer was used by more than 90% of all users. To counter this dominance, Netscape launched what would become Mozilla Foundation which develops and maintains Firefox. Soon after that, in 2003, Apple launched Safari, and in 2008, Google launched Chrome.
 
-You're most likely familiar with most, if not all these names.<span id="most-used-browser"> There is a lot of [competition among browsers](https://www.youtube.com/watch?v=W4wWdmfOibY) still to this day, even though Chrome (and [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser))) is the dominant player in the market</span>.
+You're most likely familiar with most, if not all these names. There is a lot of [competition among browsers](https://www.youtube.com/watch?v=W4wWdmfOibY) still to this day, even though Chrome (and [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser))) is the dominant player in the market.
 
 ### What is browser compatibility?
 
@@ -52,34 +52,19 @@ It is generally good advice to implement new features when they are supported by
 
 Traditionally, the Web was desktop computer first. The application was successful if it worked well on desktop browsers. But as smartphones have become more popular, each year more and more users are using mobile devices as their main Web-facing device. In some areas of the world, mobile users are a vast majority.
 
-Mobile devices mostly consist of smartphones and tablets. The most popular mobile operating systems are [Android](<https://en.wikipedia.org/wiki/Android_(operating_system)>) and Apple's [iOS](https://en.wikipedia.org/wiki/IOS).
+Mobile devices mostly consist of smartphones and tablets. The most popular mobile operating systems are Android and Apple's iOS.
 
 As you're developing your applications, you must also consider whether your application should be fully mobile compatible. There are a couple of specifics about mobile browsers that you need to keep in mind.
 
-1. <span id="apple-browsers">On iOS and iPadOS, Safari is the only supported browser in most regions. Yes, you can install Chrome or Firefox, and you can even set them as a default, but they are not full browsers. They are still using the Safari rendering engine (WebKit). Therefore, for your web application to work for Apple users, you have to ensure support for WebKit and other technologies used in Safari.
-It's important to remember that mobile browsers are not one-to-one with their desktop counterparts. A project that works in the desktop version of Safari might still need adjustments to work properly on the mobile version of the same browser.</span>
+1. On iOS and iPadOS, Safari is the only supported browser in most regions. Yes, you can install Chrome or Firefox, and you can even set them as a default, but they are not full browsers. They are still using the Safari rendering engine (WebKit). Therefore, for your web application to work for Apple users, you have to ensure support for WebKit and other technologies used in Safari.
+It's important to remember that mobile browsers are not one-to-one with their desktop counterparts. A project that works in the desktop version of Safari might still need adjustments to work properly on the mobile version of the same browser.
 1. Another consideration for mobile browsers is the magnitude of different screen sizes. It is virtually impossible to have every physical device available to test, and thankfully browsers provide a way to emulate other devices. The important piece to remember is that when, for example, you emulate an iPhone in Chrome, all that you're emulating is the screen size. Keep in mind that any specific considerations of the operating system will not be reproducible. Which means that even though everything functions well in Chrome when emulating a device, it could behave differently on the actual phone or tablet device.
 
 ### Assignment
 
 <div class="lesson-content__panel" markdown="1">
 
-- Review [Can I Use](https://caniuse.com/). Are all technologies you have encountered so far supported by popular browsers?
-- Read this article [about browsers on iOS](https://adactio.com/journal/17428).
+1. Review [Can I Use](https://caniuse.com/). Are all technologies you have encountered so far supported by popular browsers?
+1. Read this article [about browsers on iOS](https://adactio.com/journal/17428).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the most used browser currently?](#most-used-browser)
-- [What was the original name of the first web browser?](#first-web-browser)
-- [How are mobile browsers different on Apple mobile operating systems from Android?](#apple-browsers)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- Read more about the [history of web browsers](https://taskade.medium.com/history-of-web-browsers-the-evolution-of-digital-productivity-️-28fa2d4130fb).
-- Take a look at ["How Web Works"](https://github.com/vasanthk/how-web-works/blob/master/README.md).

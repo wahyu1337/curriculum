@@ -33,15 +33,3 @@ Some other criteria to think about in the "nice-to-have" column:
 1. Read this [Hire Beware blog post about some warning signs for less-than-ideal opportunities](https://github.com/TheOdinProject/blog/blob/main/hire-beware.md).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What strategies can you use to avoid wasting time on unworthy job leads?](#qualify-the-leads)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

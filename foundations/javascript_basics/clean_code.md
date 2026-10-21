@@ -285,20 +285,3 @@ Learning to write clean code is a process of constant improvement. One that will
 1. To help better understand good comment practices, read about [comments telling us why code works](https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/) as well as how to [code without comments](https://blog.codinghorror.com/coding-without-comments/).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [Why is it important to write clean code?](#introduction)
-- [What are some good principles for keeping code clean?](https://onextrapixel.com/10-principles-for-keeping-your-programming-code-clean/)
-- [What is the difference between good comments and bad comments?](https://onextrapixel.com/10-principles-for-keeping-your-programming-code-clean/)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- [A nice op-ed on code as documentation](https://www.martinfowler.com/bliki/CodeAsDocumentation.html)
-- [Airbnb style guide](https://github.com/airbnb/javascript)
-- [Chaining methods to write sentences](https://web.archive.org/web/20190211152543/https://javascriptissexy.com/beautiful-javascript-easily-create-chainable-cascading-methods-for-expressiveness/)
-- [Clean code in JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)

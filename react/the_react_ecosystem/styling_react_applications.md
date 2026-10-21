@@ -49,17 +49,3 @@ For learning purposes throughout this course, we strongly recommend that you avo
 1. Skim through the [styled components documentation](https://styled-components.com/).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How can you use CSS Modules in your React app?](https://www.makeuseof.com/react-components-css-modules-style/)
-- [What does CSS-in-JS mean?](#css-in-js)
-- [What are component libraries?](#component-libraries)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- Josh Comeau has a nice article on [getting the most out of styled-components](https://www.joshwcomeau.com/css/styled-components/).

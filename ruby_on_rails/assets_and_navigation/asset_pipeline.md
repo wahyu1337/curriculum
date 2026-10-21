@@ -13,7 +13,7 @@ This section contains a general overview of topics that you will learn in this l
 
 Assets in your application are additional files that get called by the browser after your initial gob of HTML is received. The word "assets" is used to mean things like CSS stylesheets, JavaScript files, images, videos, etc.—basically anything that requires an additional request to grab.
 
-The Asset Pipeline is one of a few different ways to handle assets in Rails. You will learn about other ways to manage CSS and JS as you move through this course. It may well depend on where you end up working what convention they follow, but as you learn more, you'll understand how the Asset Pipeline differs from alternatives as well as how to use any of the available methods to handle assets in your application. Here we will cover how the Asset Pipeline works, and in future lessons we will cover the alternatives. For your own projects we suggest using import maps for JavaScript code and the Asset Pipeline for other assets.
+The Asset Pipeline is one of a few different ways to handle assets in Rails. You will learn about other ways to manage CSS and JS as you move through this course. It may very well depend on the convention followed at the place where you end up working, but as you learn more, you'll understand how the Asset Pipeline differs from alternatives as well as how to use any of the available methods to handle assets in your application. Here we will cover how the Asset Pipeline works, and in future lessons we will cover the alternatives. For your own projects we suggest using import maps for JavaScript code and the Asset Pipeline for other assets.
 
 Getting back to the Asset Pipeline, often times, it's easiest to organize your code for development purposes into many different files so you can keep track of them better. But if the browser has to grab a dozen different CSS files, each one of those requests is going to slow things down. Too many requests and you've harpooned your user's experience with your application.
 
@@ -45,7 +45,7 @@ This fingerprinting is automatically provided when using Rails's link helpers. S
 
 ### Images
 
-For images, the asset pipeline keeps them in the `/assets` directory unless you've made your own subdirectories.  Use `image_tag`'s to avoid confusion, e.g. `<%= image_tag "fuzzy_slippers.jpg" %>` will look for a file named `fuzzy_slippers.png` in the `/assets/images` folder. You can also organize images into subdirectories, which is helpful as applications grow and use more images and icons.
+For images, the asset pipeline keeps them in the `/assets` directory unless you've made your own subdirectories.  Use `image_tag`'s to avoid confusion, e.g. `<%= image_tag "fuzzy_slippers.jpg" %>` will look for a file named `fuzzy_slippers.jpg` in the `/assets/images` folder. You can also organize images into subdirectories, which is helpful as applications grow and use more images and icons.
 
 ### Assignment
 
@@ -56,13 +56,6 @@ Some necessary and straightforward reading on the Asset Pipeline:
   1. Read [Rails Guides on the Asset Pipeline](https://guides.rubyonrails.org/asset_pipeline.html) sections 1 to 3.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How does the Asset Pipeline help with browser caching of your assets?](#fingerprinting)
-- [How do you include an asset in your views or layout?](https://guides.rubyonrails.org/asset_pipeline.html#digested-assets-in-views)
 
 ### Additional resources
 

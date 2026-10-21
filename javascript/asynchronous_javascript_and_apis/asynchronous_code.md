@@ -79,20 +79,3 @@ Of course, there are many more occasions where one would want to use Promises be
 1. Read this [promise basics article](https://javascript.info/promise-basics), which is an excellent resource for beginners.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is a callback?](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
-- [What is a promise?](#promises)
-- [When should you use promises over callbacks?](https://www.geeksforgeeks.org/javascript/what-to-understand-callback-and-callback-hell-in-javascript/)
-- [What does the `.then()` function do?](https://davidwalsh.name/promises)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- The [Promises by ColorCode video](https://www.youtube.com/watch?v=TnhCX0KkPqs) is a nice introduction to Promises if you need additional information.
-- For a more interactive explanation and example, try a [Scrim on asynchronous coding](https://scrimba.com/scrim/cof4e4fb797a2d0a236ea38ce?embed=odin,mini-header,no-next-up).
-- Read ["You Don't Know JavaScript" Chapter 2: Callbacks](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch2.md) and [Chapter 3: Promises](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/async%20%26%20performance/ch3.md). Both chapters dive deep into their respective topics, which may make for a difficult - but worthwhile - read.

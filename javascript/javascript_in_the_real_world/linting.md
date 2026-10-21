@@ -59,24 +59,8 @@ Recall [template repositories](https://www.theodinproject.com/lessons/node-path-
 
 <div class="lesson-content__panel" markdown="1">
 
-1. Read this article that goes more into [the value of linters and how they work](https://hackernoon.com/how-linting-and-eslint-improve-code-quality-fa83d2469efe).
+1. Read this article that goes more into [the value of linters and how they work](https://blog.codacy.com/what-is-a-linter).
 1. Watch this [short intro to Prettier](https://www.youtube.com/watch?v=hkfBvpEfWdA) by its creator.
 1. Go to [Prettier's online playground](https://prettier.io/playground) and give it a test drive. Go ahead and copy/paste some of your old JavaScript code into that editor and see what happens.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is linting?](#linting)
-- [Which problems can linting prevent?](https://hackernoon.com/how-linting-and-eslint-improve-code-quality-fa83d2469efe)
-- [What are some of the benefits of using a formatter?](#formatters)
-- [What is Prettier?](https://www.youtube.com/watch?v=hkfBvpEfWdA)
-- [Why should you install linters and/or formatters as dev dependencies in your project?](#ide-extensions-for-linting-and-formatting)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

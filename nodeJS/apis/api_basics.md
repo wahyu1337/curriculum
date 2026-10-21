@@ -4,7 +4,7 @@ In recent years, a new pattern for developing websites has been gaining populari
 
 Organizing your project this way can be beneficial because it allows your project to be more modular instead of combining business logic with view logic. This also allows you to use a single backend source for multiple frontend applications, such as a website, a desktop app, or a mobile app. Other developers enjoy this pattern because they like using frontend frameworks such as React or Vue to create nice frontend-only, single-page applications.
 
-Frontend and backend applications usually talk to each other using JSON, which you have already encountered if you've gone through our frontend JavaScript course. So at this point, all you really need to learn is how to get your Express application to speak JSON instead of HTML. The assignment at the end of this lesson will take you through a tutorial, but essentially all you have to do is pass your information into [`res.json()`](https://expressjs.com/en/api.html#res.json) instead of [`res.send()`](https://expressjs.com/en/api.html#res.send) or [`res.render()`](https://expressjs.com/en/api.html#res.render). How easy is that?
+Frontend and backend applications usually talk to each other using JSON, which you have already encountered if you've gone through our frontend JavaScript course. So at this point, all you really need to learn is how to get your Express application to speak JSON instead of HTML. The assignment at the end of this lesson will take you through a tutorial, but essentially all you have to do is pass your information into [`res.json()`](https://expressjs.com/en/5x/api/response/#resjson) instead of [`res.send()`](https://expressjs.com/en/5x/api/response/#ressend) or [`res.render()`](https://expressjs.com/en/5x/api/response/#resrender). How easy is that?
 
 If you think back to the organization of the routes in the [Routes lesson](https://www.theodinproject.com/lessons/nodejs-routes#routers), we grouped related routes together and extracted each group into its own file. This approach allowed us to more easily modify specific routes without impacting others.
 
@@ -59,16 +59,6 @@ For now, it is acceptable to just allow access from any origin. This makes devel
 1. Read and code along with this tutorial on [setting up a REST API in Express](https://www.robinwieruch.de/node-express-server-rest-api/). This is one of the best Express tutorials we've come across, it also talks about modular code organization, writing middleware, and links to some great extra info at the end.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What does REST stand for?](#rest)
-- [What are HTTP verbs and why are they important to an API?](#rest)
-- [What is the Same-Origin Policy?](#cors)
-- [How do you enable CORS in your Express app?](https://expressjs.com/en/resources/middleware/cors.html)
-- [Which HTTP verb does each letter in CRUD (Create, Read, Update, Delete) correspond to?](#http-verbs-table)
 
 ### Additional resources
 

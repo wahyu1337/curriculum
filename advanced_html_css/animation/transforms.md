@@ -15,7 +15,7 @@ This section contains a general overview of topics that you will learn in this l
 
 ### Basics of transforms
 
-The `transform` property takes in one or more CSS transform functions as its values, with those functions taking in their own value, usually an angle or a number.
+The `transform` property takes in one or more [CSS transform functions](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function) as its values, with those functions taking in their own value, usually an angle or a number.
 
 Almost all elements can have the `transform` property applied to them, with the exceptions being `<col>`, `<colgroup>`, and non-replaced inline elements. "Non-replaced" refers to elements whose content is contained within the HTML document (`<span>`, `<b>`, and `<em>`, for example), as opposed to a "replaced" element's content being contained outside of the document, the element itself being "replaced" by the external content (`<video>`, `<iframe>`, and `<img>`, for example). You do not need to memorize every element that is non-replaced, but rather keep this knowledge in mind should you try to apply the `transform` property to an element and aren't sure why it isn't working.
 
@@ -157,9 +157,7 @@ on <a href="https://codepen.io">CodePen</a>.</span>
 
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-If you guessed correctly, congratulations! But this is a tricky concept. MDN's transform docs state that "[composite transforms are effectively applied in order from right to left](https://developer.mozilla.org/en-US/docs/Web/CSS/transform#values)".
-
-The blue box rotates 45 degrees on the spot, then translates on the X axis by 200%, moving it directly to the right. The red box translates by 200% first, so moves to the right, but the transform origin is still where it used to be. Therefore, it rotates 45 degrees around that original point, making the red box "swing down" to end up diagonally from where it started.
+If you guessed correctly, congratulations! The blue box translates on the X axis by 200%, moving it directly to the right, then rotates in place by 45 degrees. The red box rotates by 45 degrees first, then translates on the now-rotated X axis by 200%, moving it to the bottom-right.
 
 While you can generally chain multiple transforms in any order for various results, there is one exception: `perspective`. This brings us nicely to the next section where `perspective` is involved.
 
@@ -277,20 +275,3 @@ Another benefit of `transform` is that it can be hardware-accelerated via a devi
 1. Go through [The World of CSS Transforms](https://www.joshwcomeau.com/css/transforms/) by Josh Comeau.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are the four main functions of the `transform` property?](#two-dimensional-transforms)
-- [Which function can be used to move an object through space on the X, Y, or Z axis?](#translate)
-- [Which function can be used to make an object larger or smaller on the X, Y, or Z axis?](#scale)
-- [What additional function is required for 3D transforms?](#three-dimensional-transforms)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- Learn more about `matrix` by checking Quackit's article on the [matrix function](https://www.quackit.com/css/functions/css_matrix_function.cfm).
-- For a full reference, there’s always [MDN's documentation on CSS transform functions](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function).
-- For more on the 3D transform functions, [W3Schools' page on CSS transforms](https://www.w3schools.com/css/css3_3dtransforms.asp) is a good article demonstrating how they work.

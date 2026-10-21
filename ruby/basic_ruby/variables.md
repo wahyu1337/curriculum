@@ -42,14 +42,14 @@ age = age + 4
 age #=> 22
 ```
 
-Because this is a common scenario, <span id="add-assignment-operator">Ruby provides a nice shorthand assignment operator for doing this: `+=`</span>.
+Because this is a common scenario, Ruby provides a nice shorthand assignment operator for doing this: `+=`.
 
 ```ruby
 age = 18
 age += 4 #=> 22
 ```
 
-<span id="non-add-assignment-operators">There are similar assignment operators for all the common math operators</span>:
+There are similar assignment operators for all the common math operators:
 
 ```ruby
 age = 18
@@ -122,23 +122,3 @@ This example may be hard to completely understand at this point in the lesson. T
 1. Use IRB in your command line or an appropriate online REPL environment and try naming some variables and assigning values to them. Don't worry so much about good naming conventions at this stage. Instead, experiment with different variable names and see what is valid. Try using symbols or numbers in your variable names. Try assigning a variable to another variable and observe the behavior when using `upcase!`, as in the example above. If you come across anything quirky, Google it to find out why it happened.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is a variable?](#introduction)
-- [How do you assign a value or an expression to a variable?](#declaring-a-variable)
-- [What does the `+=` assignment operator do?](#add-assignment-operator)
-- [What does the `-=` assignment operator do?](#non-add-assignment-operators)
-- [What does the `*=` assignment operator do?](#non-add-assignment-operators)
-- [What does the `/=` assignment operator do?](#non-add-assignment-operators)
-- [What are the variable naming conventions?](#how-to-name-variables)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- Read the full [Variables chapter from *The Bastards Book of Ruby*](http://ruby.bastardsbook.com/chapters/variables) if you can't get enough about variables.
-- [Variables as Pointers](https://launchschool.com/books/ruby/read/more_stuff#variables_as_pointers), from LaunchSchool's *Introduction to Programming With Ruby*.
-- If you want to know more about Ruby's naming conventions, check out the [Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide). Don't get too deep into it; just know that it's there.

@@ -28,6 +28,10 @@ This section contains a general overview of topics that you will learn in this l
 
 ### Turbo drive
 
+Before we dive into Turbo Drive, let's talk about Turbo as a whole. It is a JavaScript library that ships with Rails by default and runs in the browser. Traditionally, full page reloads are slow, lose JavaScript state, and re-downloading assets is time-consuming. Enter Turbo: it makes creating fast, modern web applications easier by allowing the server to serve HTML directly to the browser.
+
+Turbo has a few techniques that define it: Turbo Drive is used to make navigation faster without a full page reload. Turbo Frames help define specific content of a page that you want replaced without requesting an entire page. Turbo Streams respond to real-time changes on the client side over WebSocket. Finally, Turbo Native allows fast navigation in mobile apps.
+
 Turbo Drive is the portion of Turbo that accelerates overall page navigation. Turbo Drive watches for when a user clicks a link or submits a form, handles the request being made by the user, and then updates the page for the user without a full reload! This is the default behavior without any set up required. However, it is still important to understand what exactly Turbo Drive is doing in case you need to manually modify or disable its behavior in some portions of your web page.
 
 #### Page navigation
@@ -48,11 +52,11 @@ The application visit lifecycle can be summarized as:
 1. Application visits begin when a user clicks a Turbo Drive enabled link (remember, Turbo Drive is enabled on links by default!).
 1. An HTTP network request is issued. Turbo Drive receives it and will render the HTML.
 1. If possible, Turbo Drive will use the browser's cache to render a preview of the page immediately after the visit begins, using the HTML for the previous visit of the same URL.
-1. <span id="visit-action">The browser history is updated to reflect this page navigation. The way it is changed is determined by the visit action.</span>
+1. The browser history is updated to reflect this page navigation. The way it is changed is determined by the visit action.
     - **Advance**: This is the default action and will result in a new entry being added to the browser history.
     - **Replace**: This action replaces the most recent browser history entry with the new location.
 
-<span id="change-turbo-action">To change the action of a Turbo Drive link, you can use data attributes inside of your Rails link tags</span>
+To change the action of a Turbo Drive link, you can use data attributes inside of your Rails link tags
 
 ```erb
 <%= link_to "Edit Article", edit_article_path(@article), data: { turbo_action: "replace" } %>
@@ -128,7 +132,7 @@ Think of it like this, after you submit a form usually you want to be directed s
 1. When the server responds with a 4XX status code. This is common if you submit a form with the wrong information in it and the server will respond with a 422 Unprocessable Entity status.
 1. When the server responds with a 5XX status code of which the most common is 500 Internal Server Error.
 
-If the server responds with any other status, Turbo won't be able to handle it and it will appear as though nothing has happened as the page won't update. <span id="http-200">The one thing to keep in mind with this is the HTTP 200 status. This is returned when a request has succeeded so it might seem strange at first that Turbo can't handle this type of request.</span>
+If the server responds with any other status, Turbo won't be able to handle it and it will appear as though nothing has happened as the page won't update. The one thing to keep in mind with this is the HTTP 200 status. This is returned when a request has succeeded so it might seem strange at first that Turbo can't handle this type of request.
 
 The reason is that if you've ever submitted a form and refreshed the page before the POST action completed you get a popup from your browser asking if you want to submit the form again. Your browser does this because when you refresh you've actually issued a new request and the server has responded with a 200 status because the request was ok and handled without an error or redirect. Browsers handle this case by offering to submit the form again as a POST request for you. Because Turbo has intercepted the request you won't get that default browser behavior and Turbo cannot replicate this and it has two options:
 
@@ -152,21 +156,3 @@ To reiterate, Turbolinks is the **predecessor** of Turbo, and **Turbo is not sho
 1. Read chapters 1 and 2 of the [Turbo handbook](https://turbo.hotwired.dev/handbook/introduction). Focus on ensuring you understand around link navigation and how that works as we'll cover forms later.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is page navigation defined by Turbo Drive?](#page-navigation)
-- [What is the default visit action that adds a new entry to the browser history?](#visit-action)
-- [How do you change the action of a Turbo Drive link?](#change-turbo-action)
-- [How do you disable Turbo Drive?](#disable-turbo-drive)
-- [What is the HTTP status code that Turbo cannot handle?](#http-200)
-- [How do you require confirmation for a visit?](https://turbo.hotwired.dev/handbook/drive#requiring-confirmation-for-a-visit)
-- [How does Turbo speeds up perceived link navigation latency?](https://turbo.hotwired.dev/handbook/drive#prefetching-links-on-hover)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

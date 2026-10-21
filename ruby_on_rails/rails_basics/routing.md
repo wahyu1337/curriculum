@@ -204,23 +204,15 @@ You should have a good sense of what's going on in the routes file by now but pr
 1. Read the [Rails Guides chapter on Routing](http://guides.rubyonrails.org/routing.html), sections 1-2.5, 3.1-3.4, 4.6, and 6.1
 1. Watch this [Wonderful explanation of how REST and HTTP works](https://www.youtube.com/watch?v=Q-BpqyOT3a8). You can follow the tutorial using `curl https://api.github.com`.
 
-<div class="lesson-note lesson-note--tip" markdown="1">
+   <div class="lesson-note lesson-note--tip" markdown="1">
 
-The Postman Chrome Extension shown in the video is deprecated. Use the native [Postman App](https://www.postman.com/downloads/) or use the web version.
+   #### Don't use the Postman Chrome Extension
+
+   The Postman Chrome Extension shown in the video is deprecated. Use the native [Postman App](https://www.postman.com/downloads/) or use the web version.
+
+   </div>
 
 </div>
-
-</div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the purpose of the Rails router?](https://guides.rubyonrails.org/routing.html#the-purpose-of-the-rails-router)
-- [How do you assign the root route of your application in the router?](#root)
-- [Assuming we have no knowledge of the HTTP-verb, which 3 RESTful controller actions could be triggered by the `/photos/:id` -route?](https://guides.rubyonrails.org/routing.html#crud-verbs-and-actions)
-- [How can you assign all of the RESTful routes for a resource - excluding the destroy-route - in just one line?](https://guides.rubyonrails.org/routing.html#restricting-the-routes-created)
-- [How would you create a link in your app (without hardcoding), that directs you to `/photos/10/edit`?](https://guides.rubyonrails.org/routing.html#path-and-url-helpers)
 
 ### Additional resources
 

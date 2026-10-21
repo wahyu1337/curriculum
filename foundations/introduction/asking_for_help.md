@@ -45,16 +45,3 @@ People who volunteer in coding communities are here to help! A question you may 
 1. Read and bookmark our community guide [How to Ask Technical Questions](https://www.theodinproject.com/guides/community/how_to_ask). It is a great reference to refer to whenever you find yourself needing to ask for help, and you might find yourself solving your own problem as you think about the points listed in the article.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the “XY Problem”?](https://xyproblem.info/)
-- [What 5 things should your questions include?](https://www.theodinproject.com/guides/community/how_to_ask)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- Harvard Business Review article exploring [The Mental Battle behind Asking for Help](https://web.archive.org/web/20230616210023/https://hbr.org/2023/07/why-its-so-hard-to-ask-for-help).

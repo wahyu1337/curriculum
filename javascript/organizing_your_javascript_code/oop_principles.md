@@ -75,20 +75,3 @@ This one is related pretty strongly to 'Single Responsibility' but takes a diffe
 1. FunFunFunction has a great video on [favoring composition over inheritance](https://www.youtube.com/watch?v=wfMtDGfHWpA).
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What is the "Single Responsibility Principle"?](#single-responsibility)
-- [What are the additional SOLID principles?](https://duncan-mcardle.medium.com/solid-principle-1-single-responsibility-javascript-5d9ce2c6f4a5)
-- [What are "tightly coupled" objects and why do we want to avoid them?](https://web.archive.org/web/20170215102316/http://www.innoarchitech.com:80/scalable-maintainable-javascript-coupling)
-- [Why is favoring composition over inheritance suggested?](https://www.youtube.com/watch?v=wfMtDGfHWpA)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- The best book we've ever read on the subject of loose coupling is [Practical Object-Oriented Design In Ruby](http://www.poodr.com/). Unfortunately, it is not free... and not JavaScript. We feel confident in recommending it anyway. If you don't know Ruby, it is a clear enough language that you don't really need to learn it to follow the examples and the content of the book is sincerely fantastic. Alternatively, [99 Bottles of OOP](https://sandimetz.com/products) is written in both JavaScript and Ruby. It is written by the same author and may be a better option if you are brand new to OOP (it is not free either).
-- [Building a house from the inside out](https://www.ayweb.dev/blog/building-a-house-from-the-inside-out) will walk you through the process of separating your core logic and DOM logic.
-- This [brief video by Coderized](https://www.youtube.com/watch?v=q1qKv5TBaOA) covers the SOLID programming principles and more, within the context of embracing clean coding practices and establishing a maintainable code structure. You may find it helpful if you are still confused about why these principles exist and how they can work together to improve your code, code architecture, and your skills as a programmer!

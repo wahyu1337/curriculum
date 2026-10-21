@@ -84,21 +84,7 @@ It *is* possible to get fancy, and set up layouts where some columns relate to e
 
 <div class="lesson-content__panel" markdown="1">
 
-1. Read [W3C's "Basic Values of 'flex'"](https://www.w3.org/TR/css-flexbox-1/#flex-common) to understand the basic values of common flex shorthand values.
+1. Read [W3C's "7.1.1 Basic Values of 'flex'"](https://www.w3.org/TR/css-flexbox-1/#flex-common) to understand the basic values of common flex shorthand values.
 1. [MDN's documentation on flex](https://developer.mozilla.org/en-US/docs/Web/CSS/flex) summarizes the entire flex shorthand values, as well as introduces some new syntax that hasn't been covered in the previous article.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are the 3 values defined in the shorthand `flex` property (e.g. `flex: 1 1 auto`)?](#the-flex-shorthand)
-- [What are the 3 defined values for the flex shorthand `flex:auto`?](#what-is-flex-auto)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- A [video exploring how flexbox works and why](https://www.youtube.com/watch?v=u044iM9xsWU&t=1s).
-- For an interactive explanation and demo, check out the [Scrim on the flex shorthand](https://scrimba.com/learn/flexbox/the-flex-property-flexbox-tutorial-cGNKJTv). For an alternative explanation you can view the [Scrim on using flex-grow, flex-shrink, and flex-basis](https://scrimba.com/learn/flexbox/flex-grow-shrink-basis-flexbox-tutorial-ck6L7fv). Note that these Scrims require logging into Scrimba in order to view.

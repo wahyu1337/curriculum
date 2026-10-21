@@ -36,7 +36,7 @@ export default function App() {
   ]);
   const products = /* some custom hook that fetches products and returns the fetched products */
 
-  const addToCart = () => {
+  const addToCart = (product) => {
     // add to cart logic (this adds to cartItems)
   };
 
@@ -165,7 +165,7 @@ export default function App() {
   ]);
   const products = /* some custom hook that fetches products and returns the fetched products */
 
-  const addToCart = () => {
+  const addToCart = (product) => {
     // add to cart logic (this adds to cartItems)
   };
 
@@ -265,22 +265,7 @@ Although the Context API can be a powerful tool for managing state in larger Rea
 
 <div class="lesson-content__panel" markdown="1">
 
-1. The React Docs provides more engaging examples and possible optimizations for the Context API. You can check it out by going through their [documentation for useContext](https://react.dev/reference/react/useContext). Be sure to try out each example!
+1. The React Docs provides more engaging examples and possible optimizations for the Context API. You can check it out by going through their [documentation on passing data deeply with Context](https://react.dev/learn/passing-data-deeply-with-context). Be sure to try out each example!
 1. Read the short article [Prop Drilling](https://kentcdodds.com/blog/prop-drilling) by Kent C. Dodds. This is a great article to get more understanding for prop drilling, it features digestible examples.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What problems can prop drilling cause?](https://kentcdodds.com/blog/prop-drilling#what-problems-can-prop-drillingcause)
-- [How can we avoid problems with prop drilling?](https://kentcdodds.com/blog/prop-drilling#how-can-we-avoid-problems-with-prop-drilling)
-- [What are the benefits of using the Context API over passing props down through multiple levels of components?](#context-api-benefits)
-- [What are the drawbacks in using the Context API?](#drawbacks-of-using-context-api)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- For some extra practice/review, check out the [React docs lesson on passing data with Context](https://react.dev/learn/passing-data-deeply-with-context).

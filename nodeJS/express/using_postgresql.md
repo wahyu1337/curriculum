@@ -289,7 +289,7 @@ node db/populatedb.js <production-db-url>
 
 1. Skim through [pg's documentation](https://node-postgres.com/). The library itself is light, and so is their documentation. You don't need to read everything, use it mainly as a reference.
 1. Update the above project we've been working on.
-    1. Install `dotenv` package and implement environment variables for db connection information.
+    1. Implement environment variables for db connection information.
     1. Add search functionality via query parameters on the index route. For example, `GET /?search=sup` should return all usernames containing `sup`. DON'T implement this in JavaScript, search should be done in SQL.
     1. Add a new route `GET /delete` to delete all usernames from the db.
 1. In our previous Mini Message Board project, we implemented ephemeral messages using an array i.e. the messages would reset when server restarted. We want data persistence. Go back to this project and implement it with a PostgreSQL db and `pg`.
@@ -299,19 +299,3 @@ node db/populatedb.js <production-db-url>
    - While you're at it, add appropriate server-side validation for user input as well.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How do you create a db and table via PostgreSQL shell?](#setting-up-the-db)
-- [What is node-postgres and how do you use it?](#using-node-postgres-in-express)
-- [When should you use a client or a pool in pg?](#querying-with-pg)
-- [How would you integrate db query functions in your Express app?](#querying-with-pg)
-- [How would you populate the db via a script?](#populate-the-db-via-a-script)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

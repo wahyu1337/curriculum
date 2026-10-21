@@ -51,7 +51,9 @@ result
 #=> false
 ```
 
-<div class="lesson-note">
+<div class="lesson-note" markdown="1">
+
+#### Breaking out of the loop
 
 If you notice, there is a `break` statement in the `if` condition so that loop stops executing once the number is found. Otherwise it would still run over all numbers in the array which is not needed as we have already found the element.
 
@@ -248,19 +250,3 @@ fruits.one? { |fruit| fruit.length > 2 }
   1. Complete the predicate enumerable exercises from the [ruby-exercises repo](https://github.com/TheOdinProject/ruby-exercises) that you previously cloned.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [Why is there a question mark after some method names?](#introduction)
-- [What does the `#include?` method do?](#the-include-method)
-- [What does the `#any?` method do?](#the-any-method)
-- [What does the `#all?` method do?](#the-all-method)
-- [What does the `#none?` method do?](#the-none-method)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

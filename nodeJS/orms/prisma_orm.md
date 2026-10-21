@@ -140,31 +140,66 @@ If you use VS Code, you may want to install the [official Prisma VS Code extensi
 
 <div class="lesson-content__panel" markdown="1">
 
-1. Go through the [get started guide for relational databases](https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-node-postgresql), which covers migrations, schema, and the Prisma client.
+1. Go through the [Quickstart with Prisma v7 ORM and PostgreSQL](https://www.prisma.io/docs/v7/prisma-orm/quickstart/postgresql), which covers migrations, schema, and the Prisma client.
+
+   <div class="lesson-note" markdown="1">
+
+   #### Getting Prisma to work with JavaScript
+
+   Recently, Prisma has decided to only continue supporting Typescript. This means we will need to modify their Quickstart guide to have it work with JavaScript.
+
+   As you follow along the Prisma Quickstart guide, modify the Quickstart's steps as described below.
+
+   **Step 1:** Skip these commands:
+
+   ```bash
+   npm init
+   npm install typescript tsx @types/node --save-dev
+   npx tsc --init
+   ```
+
+   **Step 2:** You do not need to install `@types/pg`. If you get a warning about "install scripts not yet covered by allowScripts", you can safely ignore this as Prisma will perform the necessary actions in a later step anyway.
+
+   **Step 3:** We're not using Typescript, so we will completely skip this step.
+
+   **Step 4:** We want to be using the `prisma-client-js` generator instead of the default, so add `--generator-provider prisma-client-js` to the Prisma init command. We also don't want any AI features being installed from the Prisma Skills catalog by default, so add `--no-skills` to opt out:
+
+   ```bash
+   npx prisma init --datasource-provider postgresql --output ../generated/prisma --generator-provider prisma-client-js --no-skills
+   ```
+
+   We will also rename `prisma7.config.ts` to `prisma7.config.js`.
+
+   **Steps 5 and 6:** No changes necessary.
+
+   **Step 7:**  Instead of `lib/prisma.ts`, create `lib/prisma.js`. You must also add the `.js` file extension when importing `PrismaClient` in that file:
+
+   ```javascript
+   import { PrismaClient } from '../generated/prisma/client.js';
+   ```
+
+   **Step 8:** File created should be named `script.js`, and when importing `prisma` in that file, add the `.js` file extension, so the first line is:
+
+   ```javascript
+   import { prisma } from './lib/prisma.js';
+   ```
+
+   To run the script, run `node script.js`.
+
+   **Step 9:** No changes necessary.
+
 1. Read the following articles from Prisma's documentation. Try to code along with the examples. Don't worry if things don't stick yet, we'll be practicing *a lot* of Prisma in the coming projects.
-   - [What is Prisma ORM?](https://www.prisma.io/docs/orm/overview/introduction/what-is-prisma)
-   - [Prisma schema overview](https://www.prisma.io/docs/orm/prisma-schema/overview)
-   - [Data models](https://www.prisma.io/docs/orm/prisma-schema/data-model/models)
-   - [Relations](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations)
-   - [Prisma client CRUD](https://www.prisma.io/docs/orm/prisma-client/queries/crud)
-   - [Raw SQL](https://www.prisma.io/docs/orm/prisma-client/using-raw-sql/typedsql)
-   - [Prisma migrate getting started](https://www.prisma.io/docs/orm/prisma-migrate/getting-started)
-   - [Prisma migrate mental model](https://www.prisma.io/docs/orm/prisma-migrate/understanding-prisma-migrate/mental-model)
-   - [Data migrations](https://www.prisma.io/docs/guides/data-migration)
+   - [What is Prisma ORM?](https://www.prisma.io/docs/orm/v7)
+   - [Prisma schema overview](https://www.prisma.io/docs/orm/v7/prisma-schema/overview)
+   - [Data models](https://www.prisma.io/docs/orm/v7/prisma-schema/data-model/models)
+   - [Relations](https://www.prisma.io/docs/orm/v7/prisma-schema/data-model/relations)
+   - [Prisma client CRUD](https://www.prisma.io/docs/orm/v7/prisma-client/queries/crud)
+   - [Raw SQL](https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql)
+   - [Prisma migrate getting started](https://www.prisma.io/docs/orm/v7/prisma-migrate/getting-started)
+   - [Prisma migrate mental model](https://www.prisma.io/docs/orm/v7/prisma-migrate/understanding-prisma-migrate/mental-model)
+   - [Data migrations](https://www.prisma.io/docs/guides/v7/database/data-migration)
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [What are some of the challenges of using raw sql?](#challenges-with-raw-sqlin)
-- [What is Prisma schema and how is it useful?](#prisma-schema)
-- [What is the Prisma client?](#prisma-client)
-- [How does Prisma client know about the models in your schema?](#prisma-client)
-- [What is Prisma migrate?](#prisma-migrate)
-- [How do you define a relation in Prisma schema?](https://www.prisma.io/docs/orm/prisma-schema/data-model/relations)
-- [How can you get all records from a table using Prisma client?](https://www.prisma.io/docs/orm/prisma-client/queries/crud#get-all-records)
 
 ### Additional resources
 

@@ -66,16 +66,3 @@ As you become more senior and your work is more unique, recruiters can add a lot
    - [Wellfound (formerly AngelList Talent)](https://wellfound.com/jobs) - transparent startup hiring.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How can you organize your job search effectively?](#organizing-your-job-search)
-- [What are high-probability sources for finding job openings?](#the-best-places-to-look)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- It looks like this lesson doesn't have any additional resources yet. Help us expand this section by contributing to our curriculum.

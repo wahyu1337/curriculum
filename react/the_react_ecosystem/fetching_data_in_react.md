@@ -8,7 +8,7 @@ In this lesson, we'll explore the ins and outs of fetching data in React, starti
 
 This section contains a general overview of topics that you will learn in this lesson.
 
-- Understand how to make fetch requests in React components.
+- Making fetch requests in React components.
 - Catching and handling errors.
 - Lifting requests up the component hierarchy.
 
@@ -18,15 +18,15 @@ Before we dive into the specifics of fetching data in React, let's briefly revis
 
 ```javascript
 const image = document.querySelector("img");
-fetch("https://jsonplaceholder.typicode.com/photos")
+fetch("https://picsum.photos/v2/list")
   .then((response) => response.json())
   .then((response) => {
-    image.src = response[0].url;
+    image.src = response[0].download_url;
   })
   .catch((error) => console.error(error));
 ```
 
-We're making a request to the JSONPlaceholder API to retrieve an image, and then setting that URL to the src of an `<img>` element.
+We're making a request to the Picsum API to retrieve an image, and then setting that URL to the src of an `<img>` element.
 
 ### Using fetch in React components
 
@@ -41,10 +41,10 @@ const Image = () => {
   const [imageURL, setImageURL] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/photos")
-      .then((response) => response.json())
-      .then((response) => setImageURL(response[0].url))
-      .catch((error) => console.error(error));
+    fetch("https://picsum.photos/v2/list")
+    .then((response) => response.json())
+    .then((response) => setImageURL(response[0].download_url))
+    .catch((error) => console.error(error));
   }, []);
 
   return (
@@ -94,14 +94,14 @@ And finally, to assign `error` a value when a request fails, we'll add a conditi
 
 ```jsx
 useEffect(() => {
-  fetch("https://jsonplaceholder.typicode.com/photos", { mode: "cors" })
+  fetch("https://picsum.photos/v2/list")
     .then((response) => {
       if (response.status >= 400) {
         throw new Error("server error");
       }
       return response.json();
     })
-    .then((response) => setImageURL(response[0].url))
+    .then((response) => setImageURL(response[0].download_url))
     .catch((error) => setError(error));
 }, []);
 ```
@@ -127,14 +127,14 @@ const Image = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/photos", { mode: "cors" })
+    fetch("https://picsum.photos/v2/list")
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
         }
         return response.json();
       })
-      .then((response) => setImageURL(response[0].url))
+      .then((response) => setImageURL(response[0].download_url))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
@@ -168,14 +168,14 @@ const useImageURL = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/photos", { mode: "cors" })
+    fetch("https://picsum.photos/v2/list")
       .then((response) => {
         if (response.status >= 400) {
           throw new Error("server error");
         }
         return response.json();
       })
-      .then((response) => setImageURL(response[0].url))
+      .then((response) => setImageURL(response[0].download_url))
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
@@ -202,27 +202,25 @@ If we ever needed to fetch images in different components, instead of rewriting 
 
 ### Managing multiple fetch requests
 
-In a full-scale web app, you're often going to be making more than one request, and you need to be careful with how you organize them. A common issue that new React developers face when their apps start making multiple requests is called a *waterfall of requests*. Let's look at an example.
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;" width="100%" height="450" src="https://codesandbox.io/p/sandbox/github/TheOdinProject/react-examples/tree/main/fetching-data-example?file=%2Fsrc%2FProfile.jsx%3A1%2C1&embed=1" allowfullscreen></iframe>
-
-We have two components making fetch requests: `Profile` and its child component `Bio`. The requests in `Profile` and `Bio` are both firing inside of their respective components. On the surface this looks like a well-organized separation of concerns, but in this case, it comes at a cost in performance.
-
-Notice how `Bio` is taking an extra second to display? Their fetch requests should both take 1000ms to resolve so what's going on? In React, the component is not rendered until it is actually called. If JSX has conditional logic, the false branches will never render until they become true. `Bio` has to wait for the request inside of `Profile` to resolve before it starts rendering, which means the request inside `Bio` isn't sent.
-
-If we remove the short-circuiting conditional that waits for `imageURL`, `Bio` would send a request immediately, but that would mean abandoning our loading screen. Instead of compromising on design, we can lift the request up the component tree and pass its response as a prop to `Bio`.
-
-To see this in action, go back to that embedded CodeSandbox and comment out the current `Profile` and `Bio` components, and uncomment the currently commented ones.
-
-Now we have both requests firing as soon as `Profile` renders. The request for `imageURL` resolves 2 seconds before the `bioText` request, and our div containing `<Bio />` renders. When `bioText` resolves, an update will be made in state which will trigger a rerender in `<Bio />`, adding that text description to the page.
-
 <div class="lesson-note lesson-note--warning" markdown="1" >
 
 #### Using an artificial delay
 
-In all of the code examples above, we added an artificial `delay` with the `setTimeout` function. As you've likely guessed by now, this is to help you walk through the data fetching basics in the lesson. We recommend removing these `delay`s and playing around with the code examples to further cement the concepts.
+In this section, we use a code example where we've added an artificial `delay` with the `setTimeout` function. As you've likely guessed by now, this is to help you walk through the data fetching basics in the lesson. We recommend removing these delays after finishing this section then playing around with the code examples to further cement the concepts.
 
 </div>
+
+In a full-scale web app, you're often going to be making more than one request, and you need to be careful with how you organize them. A common issue that new React developers face when their apps start making multiple requests is called a *waterfall of requests*. Let's look at an example in our [react-examples repo](https://github.com/TheOdinProject/react-examples) (fork and clone it if you haven't already), this time in the `fetching-data/` directory. `cd` into it, run `npm install` then start the dev server with `npm run dev`.
+
+We have two components making fetch requests: `Profile` and its child component `Bio`. In both of those files, you'll see a component and another version of it commented out below - we'll return to these shortly. The requests in `Profile` and `Bio` are both firing inside of their respective components. On the surface this looks like a well-organized separation of concerns, but in this case, it comes at a cost in performance.
+
+Notice how whenever you load the page, `Bio` is taking an extra second to display? Their fetch requests should both take 1000ms to resolve so what's going on? In React, the component is not rendered until it is actually called. If JSX has conditional logic, the false branches will never render until they become true. `Bio` has to wait for the request inside of `Profile` to resolve before it starts rendering, which means the request inside `Bio` isn't sent.
+
+If we remove the short-circuiting conditional that waits for `imageURL`, `Bio` would send a request immediately, but that would mean abandoning our loading screen. Instead of compromising on design, we can lift the request up the component tree and pass its response as a prop to `Bio`.
+
+To see this in action, in both the `Profile` and `Bio` components, comment them out then uncomment the alternative versions below them.
+
+Now we have both requests firing as soon as `Profile` renders. The request for `imageURL` resolves 2 seconds before the `bioText` request, and our div containing `<Bio />` renders. When `bioText` resolves, an update will be made in state which will trigger a rerender in `<Bio />`, adding that text description to the page.
 
 ### Data fetching libraries
 
@@ -238,17 +236,3 @@ You've already tasted the complexity of data fetching in this lesson. Each reque
 1. Read [How to fetch data in React with performance in mind](https://www.developerway.com/posts/how-to-fetch-data-in-react) to learn more about efficiently handling fetch requests in React components.
 
 </div>
-
-### Knowledge check
-
-The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
-
-- [How can you fetch data from an API in React?](#using-fetch-in-react-components)
-- [Why should you manually throw errors in fetch requests?](#handling-errors)
-- [How can you avoid waterfalling requests?](#managing-multiple-fetch-requests)
-
-### Additional resources
-
-This section contains helpful links to related content. It isn't required, so consider it supplemental.
-
-- This article by Nadia Makarevich provides additional information and examples on [how to deal with race conditions](https://www.developerway.com/posts/fetching-in-react-lost-promises). Do not worry about the `useRef` hook, as it will be covered later on in the course.

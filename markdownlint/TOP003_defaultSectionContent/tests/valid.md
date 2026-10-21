@@ -1,0 +1,21 @@
+### Introduction
+
+Text content
+
+### Lesson overview
+
+This section contains a general overview of topics that you will learn in this lesson.
+
+- LO item.
+
+### Custom section
+
+Text content
+
+### Assignment
+
+<div class="lesson-content__panel" markdown="1">
+
+Assignment content
+
+</div>
